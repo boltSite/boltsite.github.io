@@ -6,7 +6,7 @@ import product0101Image1 from '../imgs/product01Image1.jpeg';
 import product0101Image2 from '../imgs/product01Image2.jpeg';
 import product0101Image3 from '../imgs/product01Image3.jpeg';
 import product0101Image4 from '../imgs/product01Image4.jpeg';
-import product0101Image5 from '../imgs/product01Image5.jpeg';
+import product0101Image5 from '../imgs/product01Image5.png';
 import product0101Image6 from '../imgs/product01Image6.jpeg';
 import product0101Image7 from '../imgs/product01Image7.jpeg';
 import product0101Image8 from '../imgs/product01Image8.jpeg';
@@ -17,7 +17,7 @@ import product0102Image1 from '../imgs/product02Image1.jpeg';
 import product0102Image2 from '../imgs/product02Image2.jpeg';
 import product0102Image3 from '../imgs/product02Image3.jpeg';
 import product0102Image4 from '../imgs/product02Image4.jpeg';
-import product0102Image5 from '../imgs/product02Image5.jpeg';
+import product0102Image5 from '../imgs/product02Image5.png';
 import product0102Image6 from '../imgs/product02Image6.jpeg';
 import product0102Image7 from '../imgs/product02Image7.jpeg';
 import product0102Image8 from '../imgs/product02Image8.jpeg';
@@ -28,7 +28,7 @@ import product0102Image12 from '../imgs/product02Image12.jpeg';
 import product0102Image13 from '../imgs/product02Image13.jpeg';
 import product0102Image14 from '../imgs/product02Image14.jpeg';
 import product0102Image15 from '../imgs/product02Image15.jpeg';
-import product0102Image16 from '../imgs/product02Image16.jpeg';
+import product0102Image16 from '../imgs/product02Image16.png';
 
 import product0103Image1 from '../imgs/product03Image1.jpeg';
 import product0103Image2 from '../imgs/product03Image2.jpeg';
@@ -39,12 +39,12 @@ import product0103Image6 from '../imgs/product03Image6.jpeg';
 import product0103Image7 from '../imgs/product03Image7.jpeg';
 import product0103Image8 from '../imgs/product03Image8.jpeg';
 import product0103Image9 from '../imgs/product03Image9.jpeg';
-import product0103Image10 from '../imgs/product03Image10.jpeg';
-import product0103Image11 from '../imgs/product03Image11.jpeg';
+import product0103Image10 from '../imgs/product03Image10.png';
+import product0103Image11 from '../imgs/product03Image11.png';
 import product0103Image12 from '../imgs/product03Image12.jpeg';
 import product0103Image13 from '../imgs/product03Image13.jpeg';
 import product0103Image14 from '../imgs/product03Image14.jpeg';
-import product0103Image15 from '../imgs/product03Image15.jpeg';
+import product0103Image15 from '../imgs/product03Image15.png';
 
 import product0104Image1 from '../imgs/product04Image1.jpeg';
 import product0104Image2 from '../imgs/product04Image2.jpeg';
@@ -70,14 +70,14 @@ import product0105Image10 from '../imgs/product05Image10.jpeg';
 import product0105Image11 from '../imgs/product05Image11.jpeg';
 import product0105Image12 from '../imgs/product05Image12.jpeg';
 import product0105Image13 from '../imgs/product05Image13.jpeg';
-import product0105Image14 from '../imgs/product05Image14.jpeg';
+import product0105Image14 from '../imgs/product05Image14.png';
 import product0105Image15 from '../imgs/product05Image15.jpeg';
 
 import product0106Image1 from '../imgs/product06Image1.jpeg';
 import product0106Image2 from '../imgs/product06Image2.jpeg';
 import product0106Image3 from '../imgs/product06Image3.jpeg';
 import product0106Image4 from '../imgs/product06Image4.jpeg';
-import product0106Image5 from '../imgs/product06Image5.jpeg';
+import product0106Image5 from '../imgs/product06Image5.png';
 import product0106Image6 from '../imgs/product06Image6.jpeg';
 import product0106Image7 from '../imgs/product06Image7.jpeg';
 import product0106Image8 from '../imgs/product06Image8.jpeg';
@@ -103,38 +103,38 @@ import product0107Image14 from '../imgs/product07Image14.jpeg';
 import product0107Image15 from '../imgs/product07Image15.jpeg';
 import product0107Image16 from '../imgs/product07Image16.png';
 import product0107Image17 from '../imgs/product07Image17.png';
-import product0107Image18 from '../imgs/product07Image18.png';
+import product0107Image18 from '../imgs/product07Image18.jpeg';
 
-import product0108Image1 from '../imgs/product08Image1.png';
-import product0108Image2 from '../imgs/product08Image2.png';
-import product0108Image3 from '../imgs/product08Image3.png';
+// import product0108Image1 from '../imgs/product08Image1.jpeg';
+// import product0108Image2 from '../imgs/product08Image2.jpeg';
+// import product0108Image3 from '../imgs/product08Image3.jpeg';
 
-import product0109Image1 from '../imgs/product09Image1.png';
-import product0109Image2 from '../imgs/product09Image2.png';
-import product0109Image3 from '../imgs/product09Image3.png';
-import product0109Image4 from '../imgs/product09Image4.png';
-import product0109Image5 from '../imgs/product09Image5.png';
-import product0109Image6 from '../imgs/product09Image6.png';
-import product0109Image7 from '../imgs/product09Image7.png';
-import product0109Image8 from '../imgs/product09Image8.png';
-import product0109Image9 from '../imgs/product09Image9.png';
-import product0109Image10 from '../imgs/product09Image10.png';
-import product0109Image11 from '../imgs/product09Image11.png';
-import product0109Image12 from '../imgs/product09Image12.png';
-import product0109Image13 from '../imgs/product09Image13.png';
-import product0109Image14 from '../imgs/product09Image14.png';
-import product0109Image15 from '../imgs/product09Image15.png';
-import product0109Image16 from '../imgs/product09Image16.png';
-import product0109Image17 from '../imgs/product09Image17.png';
-import product0109Image18 from '../imgs/product09Image18.png';
-import product0109Image19 from '../imgs/product09Image19.png';
-import product0109Image20 from '../imgs/product09Image20.png';
+// import product0109Image1 from '../imgs/product09Image1.png';
+// import product0109Image2 from '../imgs/product09Image2.png';
+// import product0109Image3 from '../imgs/product09Image3.png';
+// import product0109Image4 from '../imgs/product09Image4.png';
+// import product0109Image5 from '../imgs/product09Image5.png';
+// import product0109Image6 from '../imgs/product09Image6.png';
+// import product0109Image7 from '../imgs/product09Image7.png';
+// import product0109Image8 from '../imgs/product09Image8.png';
+// import product0109Image9 from '../imgs/product09Image9.png';
+// import product0109Image10 from '../imgs/product09Image10.png';
+// import product0109Image11 from '../imgs/product09Image11.png';
+// import product0109Image12 from '../imgs/product09Image12.png';
+// import product0109Image13 from '../imgs/product09Image13.png';
+// import product0109Image14 from '../imgs/product09Image14.png';
+// import product0109Image15 from '../imgs/product09Image15.png';
+// import product0109Image16 from '../imgs/product09Image16.png';
+// import product0109Image17 from '../imgs/product09Image17.png';
+// import product0109Image18 from '../imgs/product09Image18.png';
+// import product0109Image19 from '../imgs/product09Image19.png';
+// import product0109Image20 from '../imgs/product09Image20.png';
 
 const ProductSubNavPage = () => {
     const location = useLocation();
 
     // 현재 페이지 데이터 가져오기
-    const pageData = getPageData(location.pathname);
+    // const pageData = getPageData(location.pathname);
 
     const images0101 = {
         "유볼트(U볼트) - 철·스텐": product0102Image1,
@@ -253,34 +253,34 @@ const ProductSubNavPage = () => {
         "티타늄너트": product0107Image18,
     }
 
-    const images0108 = {
-        "팝너트(리벳너트) 원형": product0108Image1,
-        "팝너트(리벳너트) 육각": product0108Image2,
-        "팝너트(리벳너트) 방수타입": product0108Image3,
-    }
+    // const images0108 = {
+    //     "팝너트(리벳너트) 원형": product0108Image1,
+    //     "팝너트(리벳너트) 육각": product0108Image2,
+    //     "팝너트(리벳너트) 방수타입": product0108Image3,
+    // }
 
-    const images0109 = {
-        "대형 육각볼트 호칭경": product0109Image1,
-        "스텐절연볼트 M45*4.5P*220L": product0109Image2,
-        "분할핀홀 유볼트 22*40R*210H": product0109Image3,
-        "ㄷ자 유볼트": product0109Image4,
-        "유볼트 M24*1000A": product0109Image5,
-        "J앙카 로링경": product0109Image6,
-        "용융L앙카 단스끼": product0109Image7,
-        "양산볼트 단스끼 백도금": product0109Image8,
-        "각산볼트·각산너트 주문제작": product0109Image9,
-        "스텐전산볼트 주문제작": product0109Image10,
-        "전산볼트 전착도장": product0109Image11,
-        "써포트 베이스판 주문제작": product0109Image12,
-        "용융도금 셋트앙카 (大와셔)": product0109Image13,
-        "일반육각볼트 3가백색 아연 도금": product0109Image14,
-        "고장력육각볼트(10.9)지오메트 도금": product0109Image15,
-        "고장력육각볼트(10.9)백색아연 도금": product0109Image16,
-        "플랜지너트(후렌지너트) 3가천연 도금": product0109Image17,
-        "플랜지볼트(후렌지볼트) 흑착색 도금": product0109Image18,
-        "유너트 매그니 코팅": product0109Image19,
-        "유두렌지볼트 나이록코팅": product0109Image20,
-    }
+    // const images0109 = {
+    //     "대형 육각볼트 호칭경": product0109Image1,
+    //     "스텐절연볼트 M45*4.5P*220L": product0109Image2,
+    //     "분할핀홀 유볼트 22*40R*210H": product0109Image3,
+    //     "ㄷ자 유볼트": product0109Image4,
+    //     "유볼트 M24*1000A": product0109Image5,
+    //     "J앙카 로링경": product0109Image6,
+    //     "용융L앙카 단스끼": product0109Image7,
+    //     "양산볼트 단스끼 백도금": product0109Image8,
+    //     "각산볼트·각산너트 주문제작": product0109Image9,
+    //     "스텐전산볼트 주문제작": product0109Image10,
+    //     "전산볼트 전착도장": product0109Image11,
+    //     "써포트 베이스판 주문제작": product0109Image12,
+    //     "용융도금 셋트앙카 (大와셔)": product0109Image13,
+    //     "일반육각볼트 3가백색 아연 도금": product0109Image14,
+    //     "고장력육각볼트(10.9)지오메트 도금": product0109Image15,
+    //     "고장력육각볼트(10.9)백색아연 도금": product0109Image16,
+    //     "플랜지너트(후렌지너트) 3가천연 도금": product0109Image17,
+    //     "플랜지볼트(후렌지볼트) 흑착색 도금": product0109Image18,
+    //     "유너트 매그니 코팅": product0109Image19,
+    //     "유두렌지볼트 나이록코팅": product0109Image20,
+    // }
 
     const pages = [
         { path: "/menu01", title: "육각머리볼트·건축용볼트", images: images0101 },
@@ -290,8 +290,8 @@ const ProductSubNavPage = () => {
         { path: "/menu05", title: "와셔", images: images0105 },
         { path: "/menu06", title: "앙카", images: images0106 },
         { path: "/menu07", title: "너트(1)", images: images0107 },
-        { path: "/menu08", title: "너트(2)", images: images0108 },
-        { path: "/menu09", title: "주문제작", images: images0109 },
+        // { path: "/menu08", title: "너트(2)", images: images0108 },
+        // { path: "/menu09", title: "주문제작", images: images0109 },
     ];
 
     return (

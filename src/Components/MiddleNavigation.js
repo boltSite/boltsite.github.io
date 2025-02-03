@@ -226,7 +226,7 @@ const MiddleNavigation = () => {
                                                                 {Object.entries(currentSubtitle.items).map((item, itemIndex) => (
                                                                     <button
                                                                         key={itemIndex}
-                                                                        onClick={() => `${location.pathname}${item[0]}`}
+                                                                        onClick={() => handleNavigate(`${location.pathname}/${item[0]}`)}
                                                                     >
                                                                         {item[1]}
                                                                     </button>

@@ -7,7 +7,6 @@ import BottomNavigation from './Components/BottomNavigation';
 import AboutPage from './Pages/AboutPage';
 import CompanyPage from './Pages/CompanyPage';
 import ContactPage from './Pages/ContactPage';
-import ProductPage from './Pages/ProductPage';
 import CompanyNavPage from './Pages/CompanyNavPage';
 import ProductNavPage from './Pages/ProductNavPage';
 
@@ -24,8 +23,7 @@ function App() {
           <Route exact path="/company01" element={<CompanyPage />} />
           <Route exact path="/company02" element={<CompanyPage />} />
           <Route exact path="/contact" element={<ContactPage />} />
-          <Route exact path="/product/*" element={<ProductNavPage />} />
-          <Route exact path="/product01" element={<ProductPage />} />
+          <Route exact path="/products/*" element={<ProductNavPage />} />
         </Routes>
         <BottomNavigation/>
       </BrowserRouter>
