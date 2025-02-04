@@ -2,6 +2,7 @@
   "name": "react-bolt",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://yoongyeomp.github.io/front/",
   "dependencies": {
     "bootstrap": "^5.3.3",
     "cra-template": "1.2.0",
@@ -25,7 +26,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://yoongyeomp.github.io/front/",
   "eslintConfig": {
     "extends": [
       "react-app",

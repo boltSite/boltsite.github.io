@@ -13,7 +13,7 @@ import ProductNavPage from './Pages/ProductNavPage';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.REACT_APP_PUBLIC_URL}>
         <TopNavigation />
         <MiddleNavigation />
         <Routes>
