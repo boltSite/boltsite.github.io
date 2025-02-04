@@ -2,17 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ProductPage = (props) => {
+    
     return (
         <Container>
             <Title>{props.title}</Title>
             <Divider />
-            <ImageGrid>
-                {props.images.map((image, index) => (
-                    <ImageWrapper key={index}>
-                        <StyledImage src={image} alt={`Introduction ${index + 1}`} />
-                    </ImageWrapper>
-                ))}
-            </ImageGrid>
+            <MiddleContainer>
+                <ImageGrid>
+                    {Object.entries(props.images).map(([name, image], index) => (
+                        <ImageWrapper key={index}>
+                            <StyledImage src={image} alt={`Introduction ${index + 1}`} />
+                            <span>{name}</span>
+                        </ImageWrapper>
+                    ))}
+                </ImageGrid>
+            </MiddleContainer>
         </Container>
     );
 }
@@ -28,7 +32,7 @@ const Title = styled.h3`
 `;
 
 const Divider = styled.div`
-    width: 60%;
+    width: 1000px;
     height: 1px;
     margin: 0 auto;
     background-color: #ddd;
@@ -36,16 +40,33 @@ const Divider = styled.div`
     margin-bottom: 60px;
 `;
 
-const ImageGrid = styled.div`
+const MiddleContainer = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 20px;
     align-items: center;
 `;
 
+const ImageGrid = styled.div`
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+`;
+
 const ImageWrapper = styled.div`
-    width: 60%;
-    margin: 0 auto;
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    
+    span {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: left;
+        padding-top: 10px;
+    }
 `;
 
 const StyledImage = styled.img`

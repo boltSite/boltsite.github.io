@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import ProductPage from './ProductPage';
 
 import product0101Image1 from '../imgs/product01Image1.jpeg';
@@ -132,9 +132,9 @@ import product0107Image18 from '../imgs/product07Image18.jpeg';
 
 const ProductSubNavPage = () => {
     const location = useLocation();
+    const pathSegments = location.pathname.split('/');
 
-    // 현재 페이지 데이터 가져오기
-    // const pageData = getPageData(location.pathname);
+    const productType = pathSegments[2];
 
     const images0101 = {
         "유볼트(U볼트) - 철·스텐": product0102Image1,
@@ -282,27 +282,49 @@ const ProductSubNavPage = () => {
     //     "유두렌지볼트 나이록코팅": product0109Image20,
     // }
 
-    const pages = [
-        { path: "/menu01", title: "육각머리볼트·건축용볼트", images: images0101 },
-        { path: "/menu02", title: "볼트", images: images0102 },
-        { path: "/menu03", title: "렌치볼트", images: images0103 },
-        { path: "/menu04", title: "십자머리 볼트", images: images0104 },
-        { path: "/menu05", title: "와셔", images: images0105 },
-        { path: "/menu06", title: "앙카", images: images0106 },
-        { path: "/menu07", title: "너트(1)", images: images0107 },
-        // { path: "/menu08", title: "너트(2)", images: images0108 },
-        // { path: "/menu09", title: "주문제작", images: images0109 },
-    ];
+    const pagesMap = {
+        products01: [
+            { path: "/menu01", title: "리벳", images: images0101 },
+            { path: "/menu02", title: "직결 피스", images: images0102 },
+            { path: "/menu03", title: "태핑 나사", images: images0103 },
+            { path: "/menu04", title: "가구용 피스", images: images0104 },
+        ],
+        products02: [
+            { path: "/menu01", title: "육각머리볼트·건축용볼트", images: images0101 },
+            { path: "/menu02", title: "볼트", images: images0102 },
+            { path: "/menu03", title: "렌치볼트", images: images0103 },
+            { path: "/menu04", title: "십자머리 볼트", images: images0104 },
+            { path: "/menu05", title: "와셔", images: images0105 },
+            { path: "/menu06", title: "앙카", images: images0106 },
+            { path: "/menu07", title: "너트(1)", images: images0107 },
+        ],
+        products03: [
+            { path: "/menu01", title: "화스터, 베이스판, 빳지, 꺽쇠", images: images0101 },
+            { path: "/menu02", title: "행거, 빔클램프", images: images0102 },
+            { path: "/menu03", title: "브라켓, 새들", images: images0103 },
+            { path: "/menu04", title: "틴버클, 체인, 와이어로프, 부속품", images: images0104 },
+        ],
+        products04: [
+            { path: "/menu01", title: "기타제품", images: images0101 },
+            { path: "/menu02", title: "인서트", images: images0102 },
+            { path: "/menu03", title: "캡", images: images0103 },
+        ],
+    };
+
+    // 기본값 설정 (productType이 없거나 매칭되지 않는 경우 대비)
+    const selectedPages = pagesMap[productType] || [];
 
     return (
         <div>
-            {pages.map((page) => (
-                <Route
-                    key={page.path}
-                    path={page.path}
-                    element={<ProductPage title={page.title} images={page.images} />}
-                />
-            ))}
+            <Routes>
+                {selectedPages.map((page) => (
+                    <Route
+                        key={page.path}
+                        path={page.path}
+                        element={<ProductPage title={page.title} images={page.images} />}
+                    />
+                ))}
+            </Routes>
         </div>
     )
 }

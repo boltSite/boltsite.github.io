@@ -53,7 +53,7 @@ const menuItems = [
             {
                 title: '화스너, 와이어, 클램프, 행거',
                 items: {
-                    menu01: '화스너,베이스판, 빳지, 꺽쇠',
+                    menu01: '화스너, 베이스판, 빳지, 꺽쇠',
                     menu02: '행거, 빔클램프',
                     menu03: '브라켓, 새들',
                     menu04: '틴버클, 체인, 와이어로프, 부속품',
@@ -117,10 +117,9 @@ const MiddleNavigation = () => {
 
     const currentItem = menuItems.find((item) => location.pathname.startsWith(item.page));
     let currentSubtitle = currentItem?.subtitle;
-    console.log(currentSubtitle);
 
     if (currentItem) {
-        const subPath = location.pathname.replace(currentItem.page, '').slice(1); // 경로에서 하위 경로 추출
+        const subPath = location.pathname.replace(currentItem.page, '').slice(1).split('/')[0]; // 경로에서 하위 경로 추출
         const index = parseInt(subPath.replace(/\D/g, ''), 10) - 1; // 숫자 추출 후 0 기반 인덱스로 변환
         if (currentItem.modalContent[index]) {
             currentSubtitle = currentItem.modalContent[index];
@@ -139,6 +138,8 @@ const MiddleNavigation = () => {
     }
 
     const handleNavigate = (path) => {
+        console.log("subModal : " + subModal);
+        console.log("modal : " + modal);
         if(modal === true) {
             setModal(!modal);
             setIconImg(modal ? topIcon : bottomIcon);
@@ -146,7 +147,7 @@ const MiddleNavigation = () => {
 
         if(subModal === true) {
             setSubModal(!subModal);
-            setSubIconImg(subModal ? topIcon : bottomIcon);
+            setSubIconImg(subModal ? bottomIcon : topIcon);
         }
 
         navigate(path);
@@ -193,9 +194,17 @@ const MiddleNavigation = () => {
                                                                     <button
                                                                     key={index}
                                                                     onClick={() =>
-                                                                        handleNavigate(
-                                                                            `${currentItem.page}${currentItem.page}0${index + 1}`
-                                                                        )
+                                                                        {
+                                                                            if (currentItem.page === "/products") {
+                                                                                handleNavigate(
+                                                                                    `${currentItem.page}${currentItem.page}0${index + 1}/menu01`
+                                                                                )
+                                                                            } else {
+                                                                                handleNavigate(
+                                                                                    `${currentItem.page}${currentItem.page}0${index + 1}`
+                                                                                )
+                                                                            }
+                                                                        }
                                                                     }
                                                                     >{content.title}</button>
                                                                 ))}
@@ -226,7 +235,7 @@ const MiddleNavigation = () => {
                                                                 {Object.entries(currentSubtitle.items).map((item, itemIndex) => (
                                                                     <button
                                                                         key={itemIndex}
-                                                                        onClick={() => handleNavigate(`${location.pathname}/${item[0]}`)}
+                                                                        onClick={() => handleNavigate(`${location.pathname.split('/')[1]}/${location.pathname.split('/')[2]}/${item[0]}`)}
                                                                     >
                                                                         {item[1]}
                                                                     </button>

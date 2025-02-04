@@ -94,13 +94,17 @@ const TopNavigation = () => {
                             onMouseEnter={() => modalContent[key].length > 1 && handleMouseEnter(key)}
                             onMouseLeave={() => modalContent[key].length > 1 && handleMouseLeave()}
                         >
-                        <button onClick={() => handleNavigate(key === "contact" || key === "about" ? `/${key}` : `/${key}/${key}01`)}>
+                        <button onClick={() => {if (key === "products") {
+                              handleNavigate(`/${key}/${key}01/menu01`);
+                          } else {
+                              handleNavigate(key === "contact" || key === "about" ? `/${key}` : `/${key}/${key}01`);
+                          }}}>
                             <span>{key === "company" ? "회사소개" : key === "products" ? "제품소개" : key === "contact" ? "문의하기" : "사업장 안내"}</span>
                         </button>
                         {hoveredButton === key && modalContent[key].length > 1 &&  (
-                            <Modal isClosing={isClosing} itemCount={modalContent[key].length}>
+                            <Modal $isClosing={isClosing} $itemCount={modalContent[key].length}>
                             {modalContent[key].map((item, index) => (
-                                <ModalItem key={index} onClick={() => handleNavigate(`/${key}/${key}0${index + 1}`)}>{item}</ModalItem>
+                                <ModalItem key={index} onClick={() => handleNavigate(`/${key}/${key}0${index + 1}${key === "products" ? '/menu01' : ''}`)}>{item}</ModalItem>
                             ))}
                             </Modal>
                         )}
@@ -156,7 +160,7 @@ const TopNavigation = () => {
   
   const Modal = styled.div`
     width: 180px;
-    height: ${(props) => props.itemCount * 40 }px;
+    height: ${(props) => props.$itemCount * 40 }px;
     position: absolute;
     top: 150%;
     right: -3rem;
@@ -167,7 +171,7 @@ const TopNavigation = () => {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    animation: ${(props) => (props.isClosing ? slideUp : slideDown)} 0.2s ease-out;
+    animation: ${(props) => (props.$isClosing ? slideUp : slideDown)} 0.2s ease-out;
     z-index: 100;
   `;
   

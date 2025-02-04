@@ -20,8 +20,6 @@ function App() {
           <Route exact path="/" element={<MainPage />} />
           <Route exact path="/about" element={<AboutPage />} />
           <Route exact path="/company/*" element={<CompanyNavPage />} />
-          <Route exact path="/company01" element={<CompanyPage />} />
-          <Route exact path="/company02" element={<CompanyPage />} />
           <Route exact path="/contact" element={<ContactPage />} />
           <Route exact path="/products/*" element={<ProductNavPage />} />
         </Routes>

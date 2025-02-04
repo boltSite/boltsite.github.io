@@ -16,7 +16,7 @@ const MainPage = () => {
     const menuItems = [
         { title: '사업장 안내', subtitle: 'About Us', color: '#FF6600', img: AboutUsIcon, page: 'about' },
         { title: '회사소개', subtitle: 'Company introduction', color: '#1E3A8A', img: CompanyIcon, page: 'company/company01' },
-        { title: '제품소개', subtitle: 'Products', color: '#6B7280', img: productIcon, page: 'products/products01' },
+        { title: '제품소개', subtitle: 'Products', color: '#6B7280', img: productIcon, page: 'products/products01/menu01' },
         { title: '문의하기', subtitle: 'Contact us', color: '#111827', img: ContactIcon, page: 'contact' },
         { title: '블로그', subtitle: 'Blog', color: '#2CB24A', img: BlogIcon, page: 'https://blog.naver.com/dongsanbolt101' },
     ];
@@ -80,7 +80,7 @@ const MainPage = () => {
                 {images.map((_, index) => (
                     <Indicator
                         key={index}
-                        isActive={index === currentIndex}
+                        $isActive={index === currentIndex}
                         onClick={() => handleIndicatorClick(index)}
                     />
                 ))}
@@ -200,10 +200,10 @@ const IndicatorContainer = styled.div`
 `;
 
 const Indicator = styled.div`
-    width: ${(props) => (props.isActive ? '20px' : '10px')};
+    width: ${(props) => (props.$isActive ? '20px' : '10px')};
     height: 10px;
-    border-radius: ${(props) => (props.isActive ? '10px' : '50%')};
-    background-color: ${(props) => (props.isActive ? '#ff6600' : 'white')};
+    border-radius: ${(props) => (props.$isActive ? '10px' : '50%')};
+    background-color: ${(props) => (props.$isActive ? '#ff6600' : 'white')};
     transition: all 0.3s;
     cursor: pointer;
 `;
