@@ -25,7 +25,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://bam-j.github.io/pages/",
+  "homepage": "https://yoongyeomp.github.io/front/",
   "eslintConfig": {
     "extends": [
       "react-app",
