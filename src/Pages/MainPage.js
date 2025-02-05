@@ -61,8 +61,8 @@ const MainPage = () => {
                 <Overlay>
                     <Title>품질과 신뢰</Title>
                     <Description>
-                        품질과 신뢰를 바탕으로 국내 어느 지역이든 납기일자에 맞춰<br />
-                        최고의 서비스를 제공할 수 있도록 노력하고 있습니다.
+                        품질과 신뢰를 바탕으로 고객만족을 최고의 가치로 여겨<br />
+                        고객감동 실현을 위해 최선을 다할 것을 약속드립니다.
                     </Description>
                 </Overlay>
                 <MenuContainer>
@@ -70,8 +70,10 @@ const MainPage = () => {
                         <MenuItem onClick={() => menuButton(item.page)} key={index}>
                             <Background color={item.color} />
                             <Imgs src={item.img} alt={item.title} />
-                            <ButTitle>{item.title}</ButTitle>
-                            <Subtitle>{item.subtitle}</Subtitle>
+                            <TitleContainer>
+                                <ButTitle>{item.title}</ButTitle>
+                                <Subtitle>{item.subtitle}</Subtitle>
+                            </TitleContainer>
                         </MenuItem>
                     ))}
                 </MenuContainer>
@@ -92,8 +94,12 @@ const MainPage = () => {
 const Container = styled.div`
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: 700px;
     overflow: hidden;
+    
+    @media screen and (max-width: 1000px) {
+        height: 590px;
+    }
 `;
 
 const ImageContainer = styled.div`
@@ -113,16 +119,31 @@ const Overlay = styled.div`
     text-align: center;
     color: white;
     text-align: left;
+
+    @media screen and (max-width: 1000px) {
+        top: 10%;
+        left: 10%;
+        right: 10%;
+        text-align: center;
+    }
 `;
 
 const Title = styled.h1`
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 10px;
+
+    @media screen and (max-width: 1000px) {
+        font-size: 25px;
+    }
 `;
 
 const Description = styled.p`
     font-size: 16px;
+
+    @media screen and (max-width: 1000px) {
+        font-size: 12.5px;
+    }
 `;
 
 const MenuContainer = styled.div`
@@ -133,7 +154,17 @@ const MenuContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     gap: 20px;
+
+    @media screen and (max-width: 1000px) {
+        width: 100%;
+        height: 300px;
+        font-size: 16px;
+        flex-direction: column;
+        gap: 0px;
+        bottom: 0;
+    }
 `;
 
 const MenuItem = styled.div`
@@ -145,9 +176,19 @@ const MenuItem = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-radius: 50%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     cursor: pointer;
+
+    @media screen and (max-width: 1000px) {
+        width: 100%;
+        height: 150px;
+        font-size: 16px;
+        border-radius: 0%;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
 `;
 
 const Background = styled.div`
@@ -157,7 +198,6 @@ const Background = styled.div`
     width: 100%;
     height: 100%;
     background-color: ${(props) => props.color};
-    border-radius: 50%;
     opacity: 0.7;
     transition: opacity 0.3s ease;
 
@@ -173,8 +213,25 @@ const Imgs = styled.img`
     margin-bottom: 10px;
     z-index: 1;
     object-fit: contain;
+
+    @media screen and (max-width: 1000px) {
+        width: 40px;
+        height: 40px;
+        border-radius: 0%;
+        margin-left: 2rem;
+        margin-bottom: 0px;
+    }
 `;
 
+const TitleContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media screen and (max-width: 1000px) {
+        margin-left: 2rem;
+    }
+`;
 
 const ButTitle = styled.div`
     font-size: 18px;
@@ -182,12 +239,22 @@ const ButTitle = styled.div`
     color: white;
     margin-bottom: 5px;
     z-index: 1;
+
+    @media screen and (max-width: 1000px) {
+        text-align: left;
+        margin-bottom: 0px;
+    }
 `;
 
 const Subtitle = styled.div`
     font-size: 14px;
     color: white;
     z-index: 1;
+
+    @media screen and (max-width: 1000px) {
+        text-align: left;
+        font-size: 12px;
+    }
 `;
 
 const IndicatorContainer = styled.div`
@@ -197,6 +264,10 @@ const IndicatorContainer = styled.div`
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
+
+    @media screen and (max-width: 1000px) {
+        bottom: 20rem;
+    }
 `;
 
 const Indicator = styled.div`

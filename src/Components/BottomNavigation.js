@@ -5,12 +5,14 @@ import icon from '../imgs/longLogo.png';
 const BottomNavigation = () => {
 
     return (
-        <div style={{ width: "100%", height: "160px" }}>
+        <Container>
             <TopContainer>
                 <Representative>
                     <img src={icon} alt="logo" />
+                    <TextContainer>
                     <span>공식 상호 : 동산볼트</span>
                     <span>대표 이사 : 전명호</span>
+                    </TextContainer>
                 </Representative>
                 <Divider />
                 <HeadOffice>
@@ -36,19 +38,41 @@ const BottomNavigation = () => {
             <BottomContainer>
                 <span>Copyright ⓒ Dongsan Volt. Co. LTD All rights holdings.</span>
             </BottomContainer>
-        </div>
+        </Container>
     );
 }
 
+const Container = styled.div`
+    width: 100%;
+    height: 160px;
+
+    @media screen and (max-width: 1100px) {
+        height: 200px;
+    }
+
+    @media screen and (max-width: 800px) {
+        height: 260px;
+    }
+    
+    @media screen and (max-width: 600px) {
+        height: 340px;
+    }
+`;
+
 const TopContainer = styled.div`
     width: 100%;
-    height: 80%;
+    height: 90%;
     background-color: white;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     border-top: 1px solid #e9e9e9;
+
+    @media screen and (max-width: 800px) {
+        justify-content: flex-start;
+    }
 `;
 
 const Divider = styled.div`
@@ -57,11 +81,14 @@ const Divider = styled.div`
     background-color: black;
     margin-left: -3rem;
     margin-right: 4rem;
+
+    @media screen and (max-width: 1600px) {
+        display: none;
+    }
 `;
 
 const Representative = styled.div`
     width: 15%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,11 +106,34 @@ const Representative = styled.div`
         color: black;
         margin-bottom: 2px;
     }
+
+    @media screen and (max-width: 1100px) {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 2.1rem;
+    }
 `;
+
+const TextContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    @media screen and (max-width: 1100px) {
+        padding-left: 2rem;
+    }
+`
 
 const HeadOffice = styled.div`
     width: 20%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -99,12 +149,28 @@ const HeadOffice = styled.div`
         font-size: 12px;
         color: black;
         margin-bottom: 2px;
+    }
+
+    @media screen and (max-width: 1100px) {
+        width: 30%;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 45%;
+        padding-left: 2.1rem;
+        text-align: left;
+    }
+        
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        align-items: flex-start;
+        padding-left: 2.1rem;
     }
 `;
 
 const Point = styled.div`
     width: 20%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,11 +187,26 @@ const Point = styled.div`
         color: black;
         margin-bottom: 2px;
     }
+
+    @media screen and (max-width: 1100px) {
+        width: 30%;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 45%;
+        text-align: left;
+    }
+
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        align-items: flex-start;
+        padding-left: 2.1rem;
+    }
 `;
 
 const Information = styled.div`
     width: 20%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -137,11 +218,22 @@ const Information = styled.div`
         color: black;
         margin-bottom: 2px;
     }
+
+    @media screen and (max-width: 1100px) {
+        width: 30%;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        padding-left: 2rem;
+        text-align: left;
+    }
 `;
 
 const BottomContainer = styled.div`
     width: 100%;
-    height: 20%;
+    height: 10%;
     background-color: #e9e9e9;
     display: flex;
     justify-content: center;

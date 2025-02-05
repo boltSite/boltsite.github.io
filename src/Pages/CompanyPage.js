@@ -24,8 +24,16 @@ const Container = styled.div`
 `;
 
 const Title = styled.h3`
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
+
+    @media screen and (max-width: 1100px) {
+      font-size: 23.5px;
+    }
+
+    @media screen and (max-width: 700px) {
+      font-size: 21px;
+    }
 `;
 
 const Divider = styled.div`
@@ -35,6 +43,14 @@ const Divider = styled.div`
     background-color: #ddd;
     margin-top: 20px;
     margin-bottom: 60px;
+
+    @media screen and (max-width: 1100px) {
+      width: 700px;
+    }
+
+    @media screen and (max-width: 700px) {
+      width: 90%;
+    }
 `;
 
 const ImageGrid = styled.div`
@@ -47,6 +63,14 @@ const ImageGrid = styled.div`
 const ImageWrapper = styled.div`
     width: 1000px;
     margin: 0 auto;
+
+    @media screen and (max-width: 1100px) {
+      width: 700px;
+    }
+
+    @media screen and (max-width: 700px) {
+      width: 90%;
+    }
 `;
 
 const StyledImage = styled.img`

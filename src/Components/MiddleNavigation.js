@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import { Motion, spring } from 'react-motion';
 import main1 from '../imgs/main1.jpg';
 import main2 from '../imgs/main2.jpg';
@@ -96,6 +97,7 @@ const MiddleNavigation = () => {
     const [subIconImg, setSubIconImg] = useState(bottomIcon);
     const [modal, setModal] = useState(false); // 이미지 상태 초기값
     const [subModal, setSubModal] = useState(false); // 부제목 이미 상태 초기값
+    const isMobile = useMediaQuery({ query: '(max-width: 1000px)' });
 
     const handleModalChange = () => {
         setModal(!modal);
@@ -154,7 +156,7 @@ const MiddleNavigation = () => {
     };
 
     return (
-        <div>
+        <Container>
             {!isMainPage && (
                 <PageNav>
                     {menuItems
@@ -165,6 +167,7 @@ const MiddleNavigation = () => {
                                     <img src={item.img} alt={item.title} />
                                 </ImageContainer>
                                 <TitleContainer>{item.title}</TitleContainer>
+                                {!isMobile && (
                                 <TextContainer>
                                 {currentItem && (
                                     <MiddleContainer>
@@ -249,13 +252,18 @@ const MiddleNavigation = () => {
                                     </MiddleContainer>
                                     )}
                                 </TextContainer>
+                                )}
                             </MenuItem>
                         ))}
                 </PageNav>
             )}
-        </div>
+        </Container>
     );
 };
+
+const Container = styled.div`
+    
+`;
 
 const PageNav = styled.div`
     width: 100%;
@@ -265,6 +273,10 @@ const PageNav = styled.div`
     justify-content: center;
     align-items: center;
     background-color: #f8f9fa;
+
+    @media screen and (max-width: 1000px) {
+      height: 230px;
+    }
 `;
 
 const MenuItem = styled.div`

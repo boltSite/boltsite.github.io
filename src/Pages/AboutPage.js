@@ -87,8 +87,16 @@ const Container = styled.div`
 `;
 
 const Title = styled.h3`
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
+
+    @media screen and (max-width: 1100px) {
+      font-size: 23.5px;
+    }
+
+    @media screen and (max-width: 700px) {
+      font-size: 21px;
+    }
 `;
 
 const Divider = styled.div`
@@ -97,6 +105,14 @@ const Divider = styled.div`
     margin: 0 auto;
     background-color: #ddd;
     margin-top: 20px;
+
+    @media screen and (max-width: 1100px) {
+      width: 700px;
+    }
+
+    @media screen and (max-width: 700px) {
+      width: 90%;
+    }
 `;
 
 const MapContainer = styled.div`
@@ -104,6 +120,14 @@ const MapContainer = styled.div`
     height: 400px;
     margin-top: 60px;
     margin-bottom: 20px;
+
+    @media screen and (max-width: 1100px) {
+      width: 700px;
+    }
+
+    @media screen and (max-width: 700px) {
+      width: 90%;
+    }
 `;
 
 const MiddleContainer = styled.div`
@@ -120,6 +144,16 @@ const TitleContainer = styled.div`
     justify-content: space-between;
     margin-top: 20px;
     margin-bottom: 40px;
+
+    @media screen and (max-width: 1100px) {
+        width: 700px;
+    }
+
+    @media screen and (max-width: 700px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 
 const TitleLeft = styled.div`
@@ -160,6 +194,14 @@ const Section = styled.div`
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid #e9e9e9;
+
+    @media screen and (max-width: 1100px) {
+        width: 700px;
+    }
+
+    @media screen and (max-width: 700px) {
+        width: 400px;
+    }
 `;
 
 const SectionLeft = styled.div`

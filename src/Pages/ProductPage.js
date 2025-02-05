@@ -27,8 +27,16 @@ const Container = styled.div`
 `;
 
 const Title = styled.h3`
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
+
+    @media screen and (max-width: 1100px) {
+      font-size: 23.5px;
+    }
+
+    @media screen and (max-width: 700px) {
+      font-size: 21px;
+    }
 `;
 
 const Divider = styled.div`
@@ -38,6 +46,14 @@ const Divider = styled.div`
     background-color: #ddd;
     margin-top: 20px;
     margin-bottom: 60px;
+
+    @media screen and (max-width: 1100px) {
+      width: 700px;
+    }
+
+    @media screen and (max-width: 700px) {
+      width: 90%;
+    }
 `;
 
 const MiddleContainer = styled.div`
@@ -47,25 +63,56 @@ const MiddleContainer = styled.div`
 `;
 
 const ImageGrid = styled.div`
-    width: 1000px;
+    width: 1100px;
     display: flex;
     flex-direction: row;
     gap: 20px;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
+
+    @media screen and (max-width: 1100px) {
+      width: 700px;
+    }
+
+    @media screen and (max-width: 700px) {
+      width: 90%;
+    }
 `;
 
 const ImageWrapper = styled.div`
-    width: 49%;
+    width: calc(33.3% - 14px);;
     display: flex;
     flex-direction: column;
     
     span {
         display: inline-block;
         font-size: 16px;
-        font-weight: bold;
-        text-align: left;
-        padding-top: 10px;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 15px;
+        color: #434343;
+
+        &:hover {
+        color: #352D68;
+        }
+    }
+        
+    @media screen and (max-width: 1100px) {
+        span {
+            font-size: 14px;
+            padding-top: 15px;
+            padding-bottom: 10px;
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        width: calc(50% - 10px);
+        
+        span {
+            font-size: 12px;
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
     }
 `;
 
@@ -73,8 +120,6 @@ const StyledImage = styled.img`
     width: 100%;
     height: auto;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
 export default ProductPage;

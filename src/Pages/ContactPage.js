@@ -127,8 +127,16 @@ const FormContainer = styled.form`
 `;
 
 const Title = styled.h3`
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
+
+    @media screen and (max-width: 1100px) {
+      width: 700px;
+    }
+
+    @media screen and (max-width: 700px) {
+      width: 90%;
+    }
 `;
 
 const Divider = styled.div`
