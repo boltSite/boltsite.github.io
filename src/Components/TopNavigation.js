@@ -437,8 +437,8 @@ const MenuBtn = styled.button`
 const MenuModal = styled.div`
     position: fixed;
     width: 50vw;
-    height: 90vh;
-    top: 8.3%;
+    height: 100%;
+    top: 62px;
     right: 0;
     background-color: #484954;
     z-index: 9999;
