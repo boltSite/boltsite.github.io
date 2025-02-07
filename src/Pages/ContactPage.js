@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import closeIcon from '../imgs/closeIcon.png';
 
 const ContactPage = () => {
     const [showModal, setShowModal] = useState(false);
@@ -28,12 +29,8 @@ const ContactPage = () => {
         }
     };
 
-    const handleSubmit = async () => {
-        const phoneRegex = /^\d{2,3}-\d{3,4}-\d{4}$/;
-        if (!phoneRegex.test(formData.contact)) {
-            alert("올바른 연락처 형식을 입력하세요. (예: 010-1234-5678)");
-            return;
-        }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
         const formDataToSend = new FormData();
     
@@ -50,8 +47,7 @@ const ContactPage = () => {
             });
         }
     
-        alert('이메일이 성공적으로 전송되었습니다!');
-        window.location.reload();
+        alert('문의가 정상적으로 접수되었습니다!');
         navigate("/");
 
         axios.post(`${server_url}/send-email`, formDataToSend, {
@@ -63,7 +59,19 @@ const ContactPage = () => {
 
     const handleCancel = () => {
         navigate("/");
-    }
+    };
+
+    useEffect(() => {
+        if (showModal) {
+            document.body.style.overflow = "hidden"; // 모달이 열리면 스크롤 방지
+        } else {
+            document.body.style.overflow = "auto"; // 모달이 닫히면 다시 스크롤 허용
+        }
+
+        return () => {
+            document.body.style.overflow = "auto"; // 컴포넌트 언마운트 시 원상 복구
+        };
+    }, [showModal]);
 
     return (
         <FormContainer onSubmit={handleSubmit}>
@@ -103,19 +111,19 @@ const ContactPage = () => {
                     <label htmlFor="agreement">
                         개인정보 수집 및 이용에 동의합니다. <span style={{ color: 'red' }}>*</span>
                     </label>
-                    <ViewDetails onClick={toggleModal}>내용보기</ViewDetails>
+                    <ViewDetails type="button" onClick={toggleModal}>내용보기</ViewDetails>
                 </Agreement>
             <ButtonGroup>
-                    <SubmitButton onClick={handleSubmit}>등록</SubmitButton>
+                    <SubmitButton>등록</SubmitButton>
                     <CancelButton onClick={handleCancel}>취소</CancelButton>
             </ButtonGroup>
             </div>
             {showModal && (
-                <ModalOverlay>
-                    <Modal>
+                <ModalOverlay onWheel={(e) => e.preventDefault()}>
+                    <Modal onWheel={(e) => e.stopPropagation()}>
                         <ModalTopContainer>
                             <ModalHeader>개인정보처리방침</ModalHeader>
-                            <CloseButton onClick={toggleModal}>x</CloseButton>
+                            <CloseButton onClick={toggleModal}><img src={closeIcon} /></CloseButton>
                         </ModalTopContainer>
                         <ModalContent>
                             <p>
@@ -401,12 +409,19 @@ const ModalTopContainer = styled.div`
 `;
 
 const CloseButton = styled.button`
+    width: 20px;
+    height: 20px;
     color: black;
     background: none;
     border: none;
     cursor: pointer;
     font-size: 30px;
-    margin-top: -1rem;
+    margin-top: -1.2rem;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
 `;
 
 const ModalHeader = styled.h2`
