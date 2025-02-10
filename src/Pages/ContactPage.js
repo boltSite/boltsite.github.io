@@ -322,6 +322,10 @@ const Agreement = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
+
+    label {
+        font-size: 14px;
+    }
 `;
 
 const Checkbox = styled.input`
@@ -334,6 +338,10 @@ const ViewDetails = styled.button`
     color: #808080;
     text-decoration: underline;
     cursor: pointer;
+
+    @media screen and (max-width: 700px) {
+      font-size: 14px;
+    }
 `;
 
 

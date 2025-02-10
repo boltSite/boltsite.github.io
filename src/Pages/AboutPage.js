@@ -228,7 +228,7 @@ const TitleLeft = styled.div`
         }
         
         h3 {
-            font-size: 22px;
+            font-size: 21px;
         }
     }
 `;
