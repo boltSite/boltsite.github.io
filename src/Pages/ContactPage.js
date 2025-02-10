@@ -77,7 +77,7 @@ const ContactPage = () => {
         <FormContainer onSubmit={handleSubmit}>
             <Title>문의하기</Title>
             <Divider />
-            <div style={{ width: "60%" }}>
+            <MiddleContainer>
             <Instructions>
                 · 기성품 및 특수 제작품 등 필요하신 제품 문의 남겨주세요. <br />
                 · 업체 거래, 도·소매, 소량 구매 가능합니다. <br />
@@ -117,7 +117,7 @@ const ContactPage = () => {
                     <SubmitButton>등록</SubmitButton>
                     <CancelButton onClick={handleCancel}>취소</CancelButton>
             </ButtonGroup>
-            </div>
+            </MiddleContainer>
             {showModal && (
                 <ModalOverlay onWheel={(e) => e.preventDefault()}>
                     <Modal onWheel={(e) => e.stopPropagation()}>
@@ -195,6 +195,18 @@ const Divider = styled.div`
 
     @media screen and (max-width: 1100px) {
       width: 700px;
+    }
+
+    @media screen and (max-width: 700px) {
+      width: 90%;
+    }
+`;
+
+const MiddleContainer = styled.div`
+    width: 900px;
+
+    @media screen and (max-width: 1100px) {
+      width: 500px;
     }
 
     @media screen and (max-width: 700px) {
@@ -390,6 +402,7 @@ const ModalOverlay = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    // z-index: 9999;
 `;
 
 const Modal = styled.div`
@@ -399,6 +412,11 @@ const Modal = styled.div`
     width: 500px;
     height: 700px;
     overflow-y: auto;
+
+    @media screen and (max-width: 700px) {
+        width: 400px;
+        height: 600px;
+    }
 `;
 
 const ModalTopContainer = styled.div`
