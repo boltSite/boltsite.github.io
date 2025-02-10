@@ -170,7 +170,6 @@ const FormContainer = styled.form`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;
 `;
 
 const Title = styled.h3`
@@ -178,11 +177,11 @@ const Title = styled.h3`
     font-weight: 600;
 
     @media screen and (max-width: 1100px) {
-      width: 700px;
+      font-size: 23.5px;
     }
 
     @media screen and (max-width: 700px) {
-      width: 90%;
+      font-size: 21px;
     }
 `;
 
@@ -237,7 +236,7 @@ const FormGroup = styled.div`
     }
 
     @media screen and (max-width: 700px) {
-        width: 90%;
+        width: 100%;
     }
 `;
 
