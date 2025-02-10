@@ -170,6 +170,7 @@ const FormContainer = styled.form`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 `;
 
 const Title = styled.h3`

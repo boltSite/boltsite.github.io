@@ -333,6 +333,10 @@ const RightTitle = styled.span`
     min-width: 40px;
     margin-right: 20px;
     color: #999;
+
+    @media screen and (max-width: 700px) {
+      margin-right: 0px;
+    }
 `;
 
 const IconDiv = styled.div`

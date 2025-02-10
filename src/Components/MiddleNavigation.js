@@ -236,6 +236,10 @@ const TitleContainer = styled.span`
     color: white;
     font-size: 35px;
     font-weight: bold;
+
+    @media screen and (max-width: 700px) {
+      font-size: 30px;
+    }
 `;
 
 const TextContainer = styled.div`
