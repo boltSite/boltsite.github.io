@@ -324,7 +324,7 @@ const Agreement = styled.div`
     gap: 10px;
 
     label {
-        font-size: 14px;
+        font-size: 13px;
     }
 `;
 
@@ -340,7 +340,7 @@ const ViewDetails = styled.button`
     cursor: pointer;
 
     @media screen and (max-width: 700px) {
-      font-size: 14px;
+      font-size: 13px;
     }
 `;
 
