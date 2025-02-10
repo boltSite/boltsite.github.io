@@ -170,6 +170,7 @@ const FormContainer = styled.form`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 `;
 
 const Title = styled.h3`
@@ -206,7 +207,7 @@ const MiddleContainer = styled.div`
     width: 900px;
 
     @media screen and (max-width: 1100px) {
-      width: 700px;
+      width: 500px;
     }
 
     @media screen and (max-width: 700px) {
@@ -268,7 +269,7 @@ const Input = styled.input`
     }
 
     @media screen and (max-width: 700px) {
-      width: 90%;
+      width: 100%;
     }
 `;
 
@@ -284,7 +285,7 @@ const SmallInput = styled.input`
     }
 
     @media screen and (max-width: 700px) {
-      width: 90%;
+      width: 100%;
     }
 `;
 
@@ -303,7 +304,7 @@ const TextArea = styled.textarea`
     }
 
     @media screen and (max-width: 700px) {
-      width: 90%;
+      width: 100%;
     }
 `;
 
@@ -321,6 +322,7 @@ const FileGroup = styled.div`
 const Agreement = styled.div`
     display: flex;
     align-items: center;
+    gap: 10px;
 
     label {
         font-size: 13px;
