@@ -206,7 +206,7 @@ const MiddleContainer = styled.div`
     width: 900px;
 
     @media screen and (max-width: 1100px) {
-      width: 500px;
+      width: 700px;
     }
 
     @media screen and (max-width: 700px) {
@@ -268,7 +268,7 @@ const Input = styled.input`
     }
 
     @media screen and (max-width: 700px) {
-      width: 100%;
+      width: 90%;
     }
 `;
 
@@ -284,7 +284,7 @@ const SmallInput = styled.input`
     }
 
     @media screen and (max-width: 700px) {
-      width: 100%;
+      width: 90%;
     }
 `;
 
@@ -303,7 +303,7 @@ const TextArea = styled.textarea`
     }
 
     @media screen and (max-width: 700px) {
-      width: 100%;
+      width: 90%;
     }
 `;
 
@@ -321,7 +321,6 @@ const FileGroup = styled.div`
 const Agreement = styled.div`
     display: flex;
     align-items: center;
-    gap: 10px;
 
     label {
         font-size: 13px;
