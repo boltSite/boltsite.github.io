@@ -33,20 +33,20 @@ const ContactPage = () => {
         e.preventDefault();
 
         const formDataToSend = new FormData();
-    
+
         // 텍스트 데이터 추가
         formDataToSend.append('title', formData.title);
         formDataToSend.append('message', formData.message);
         formDataToSend.append('contact', formData.contact);
         formDataToSend.append('email', formData.email);
-    
+
         // 파일 추가
         if (formData.files.length > 0) {
             formData.files.forEach((file) => {
                 formDataToSend.append('files', file);
             });
         }
-    
+
         alert('문의가 정상적으로 접수되었습니다!');
         navigate("/");
 
@@ -78,45 +78,45 @@ const ContactPage = () => {
             <Title>문의하기</Title>
             <Divider />
             <MiddleContainer>
-            <Instructions>
-                · 기성품 및 특수 제작품 등 필요하신 제품 문의 남겨주세요. <br />
-                · 업체 거래, 도·소매, 소량 구매 가능합니다. <br />
-                · 전국 배달 및 택배 배송
-            </Instructions>
-            <FormGroup>
-                <Label>제목<span>Title</span></Label>
-                <Input type="text" name="title" value={formData.title} onChange={handleChange} required />
-            </FormGroup>
-            <FormGroup>
-                <Label>내용<span>Description</span></Label>
-                <TextArea name="message" value={formData.message} onChange={handleChange} required />
-            </FormGroup>
-            <FormGroup>
-                <Label>연락처<span>Phone</span></Label>
-                <SmallInput type="tel" name="contact" value={formData.contact} placeholder="예: 010-1234-5678" onChange={handleChange} required />
-            </FormGroup>
-            <FormGroup>
-                <Label>이메일<span>Email</span></Label>
-                <SmallInput type="email" name="email" value={formData.email} placeholder="예: ex@naver.com" onChange={handleChange} required />
-            </FormGroup>
-            <FormGroup style={{ borderBottom: '1px solid #e9e9e9', paddingBottom: '1rem' }}>
-                <Label>파일첨부<span>File upload</span></Label>
-                <FileGroup>
-                    <Input type="file" name="file" onChange={handleChange} style={{ border: 'none', width: '400px' }} multiple />
-                    <span>첨부 파일은 총 25MB 이하이며, Excel, MS Word, HWP, PDF, PNG, GIF, JPG 형식만 등록할 수 있습니다.</span>
-                </FileGroup>
-            </FormGroup>
-            <Agreement>
-                    <Checkbox type="checkbox" id="agreement" required/>
+                <Instructions>
+                    · 기성품 및 특수 제작품 등 필요하신 제품 문의 남겨주세요. <br />
+                    · 업체 거래, 도·소매, 소량 구매 가능합니다. <br />
+                    · 전국 배달 및 택배 배송
+                </Instructions>
+                <FormGroup>
+                    <Label>제목<span>Title</span></Label>
+                    <Input type="text" name="title" value={formData.title} onChange={handleChange} required />
+                </FormGroup>
+                <FormGroup>
+                    <Label>내용<span>Description</span></Label>
+                    <TextArea name="message" value={formData.message} onChange={handleChange} required />
+                </FormGroup>
+                <FormGroup>
+                    <Label>연락처<span>Phone</span></Label>
+                    <SmallInput type="tel" name="contact" value={formData.contact} placeholder="예: 010-1234-5678" onChange={handleChange} required />
+                </FormGroup>
+                <FormGroup>
+                    <Label>이메일<span>Email</span></Label>
+                    <SmallInput type="email" name="email" value={formData.email} placeholder="예: ex@naver.com" onChange={handleChange} required />
+                </FormGroup>
+                <FormGroup style={{ borderBottom: '1px solid #e9e9e9', paddingBottom: '1rem' }}>
+                    <Label>파일첨부<span>File upload</span></Label>
+                    <FileGroup>
+                        <Input type="file" name="file" onChange={handleChange} style={{ border: 'none', width: '400px' }} multiple />
+                        <span>첨부 파일은 총 25MB 이하이며, Excel, MS Word, HWP, PDF, PNG, GIF, JPG 형식만 등록할 수 있습니다.</span>
+                    </FileGroup>
+                </FormGroup>
+                <Agreement>
+                    <Checkbox type="checkbox" id="agreement" required />
                     <label htmlFor="agreement">
                         개인정보 수집 및 이용에 동의합니다. <span style={{ color: 'red' }}>*</span>
                     </label>
                     <ViewDetails type="button" onClick={toggleModal}>내용보기</ViewDetails>
                 </Agreement>
-            <ButtonGroup>
+                <ButtonGroup>
                     <SubmitButton>등록</SubmitButton>
                     <CancelButton onClick={handleCancel}>취소</CancelButton>
-            </ButtonGroup>
+                </ButtonGroup>
             </MiddleContainer>
             {showModal && (
                 <ModalOverlay onWheel={(e) => e.preventDefault()}>
@@ -127,7 +127,7 @@ const ContactPage = () => {
                         </ModalTopContainer>
                         <ModalContent>
                             <p>
-                                회사명(이하 '회사'라 한다)는 개인정보 보호법 제30조에 따라 정보주체의 개인정보를 보호하고, 
+                                회사명(이하 '회사'라 한다)는 개인정보 보호법 제30조에 따라 정보주체의 개인정보를 보호하고,
                                 개인정보와 관련한 고충을 신속하고 원할하게 처리 하기 위해 다음과 같이 개인정보
                                 처리 방침을 수립하여 공개합니다.
                                 <br /><br />
@@ -402,7 +402,6 @@ const ModalOverlay = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    // z-index: 9999;
 `;
 
 const Modal = styled.div`

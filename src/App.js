@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/contact" element={<ContactPage />} />
           <Route exact path="/products/*" element={<ProductNavPage />} />
         </Routes>
-        <BottomNavigation/>
+        <BottomNavigation />
       </BrowserRouter>
     </div>
   );

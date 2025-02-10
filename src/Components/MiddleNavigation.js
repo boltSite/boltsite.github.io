@@ -3,91 +3,10 @@ import styled from 'styled-components';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { Motion, spring } from 'react-motion';
-import main1 from '../imgs/main1.jpg';
-import main2 from '../imgs/main2.jpg';
-import main3 from '../imgs/main3.jpg';
-import main4 from '../imgs/main4.jpg';
 import homeIcon from '../imgs/homeIcon.png';
 import topIcon from '../imgs/topIcon.png';
 import bottomIcon from '../imgs/bottomIcon.png';
-
-const menuItems = [
-    {
-        title: '회사 소개',
-        subtitle: '회사소개서',
-        img: main1,
-        page: '/company',
-        modalContent: [
-            { title: '회사 소개서', items: [] },
-            { title: '회사 전경', items: [] },
-        ],
-    },
-    {
-        title: '제품 소개',
-        subtitle: '피스, 나사',
-        img: main2,
-        page: '/products',
-        modalContent: [
-            {
-                title: '피스, 나사',
-                items: {
-                    menu01: '리벳',
-                    menu02: '직결 피스',
-                    menu03: '태핑 나사',
-                    menu04: '가구용 피스'
-                },
-            },
-            {
-                title: '볼트, 너트, 와셔, 앙카',
-                items: {
-                    menu01: '육각머리볼트, 건축용볼트',
-                    menu02: '볼트',
-                    menu03: '렌치볼트',
-                    menu04: '십자머리 볼트',
-                    menu05: '와셔',
-                    menu06: '앙카',
-                    menu07: '너트(1)',
-                    menu08: '너트(2)',
-                    menu09: '주문제작'
-                },
-            },
-            {
-                title: '화스너, 와이어, 클램프, 행거',
-                items: {
-                    menu01: '화스너, 베이스판, 빳지, 꺽쇠',
-                    menu02: '행거, 빔클램프',
-                    menu03: '브라켓, 새들',
-                    menu04: '틴버클, 체인, 와이어로프, 부속품',
-                },
-            },
-            {
-                title: '기타 제품',
-                items: {
-                    menu01: '기타제품',
-                    menu02: '인서트',
-                    menu03: '캡'},
-            },
-        ],
-    },
-    {
-        title: '문의하기',
-        subtitle: '고객지원',
-        img: main3,
-        page: '/contact',
-        modalContent: [
-            { title: '고객지원', items: [] },
-        ],
-    },
-    {
-        title: '사업장 안내',
-        subtitle: '오시는 길',
-        img: main4,
-        page: '/about',
-        modalContent: [
-            { title: '오시는 길', items: [] },
-        ],
-    },
-];
+import MenuItems from './MenuItems';
 
 const MiddleNavigation = () => {
     const location = useLocation();
@@ -98,6 +17,7 @@ const MiddleNavigation = () => {
     const [modal, setModal] = useState(false); // 이미지 상태 초기값
     const [subModal, setSubModal] = useState(false); // 부제목 이미 상태 초기값
     const isMobile = useMediaQuery({ query: '(max-width: 1000px)' });
+    const menuItems = MenuItems();
 
     const handleModalChange = () => {
         setModal(!modal);
@@ -107,7 +27,7 @@ const MiddleNavigation = () => {
             setSubIconImg(bottomIcon);
         }
     };
-    
+
     const subHandleModalChange = () => {
         setSubModal(!subModal);
         setSubIconImg(!subModal ? topIcon : bottomIcon);
@@ -134,7 +54,7 @@ const MiddleNavigation = () => {
             setIconImg(bottomIcon); // 아이콘 이미지도 초기화
         }
     }, [location.pathname, currentItem]);
-    
+
     if (!currentItem) {
         return null; // 또는 기본 UI를 반환
     }
@@ -142,12 +62,12 @@ const MiddleNavigation = () => {
     const handleNavigate = (path) => {
         console.log("subModal : " + subModal);
         console.log("modal : " + modal);
-        if(modal === true) {
+        if (modal === true) {
             setModal(!modal);
             setIconImg(modal ? topIcon : bottomIcon);
         }
 
-        if(subModal === true) {
+        if (subModal === true) {
             setSubModal(!subModal);
             setSubIconImg(subModal ? bottomIcon : topIcon);
         }
@@ -168,90 +88,89 @@ const MiddleNavigation = () => {
                                 </ImageContainer>
                                 <TitleContainer>{item.title}</TitleContainer>
                                 {!isMobile && (
-                                <TextContainer>
-                                {currentItem && (
-                                    <MiddleContainer>
-                                        <IconDiv>
-                                            <img src={homeIcon} />
-                                        </IconDiv>
-                                        <Title>{item.title}</Title>
-                                        <Subtitle>
-                                            <span onClick={currentItem.modalContent.length > 1 ? handleModalChange : undefined}>
-                                                {currentItem.modalContent.length > 1 ? currentSubtitle.title : currentSubtitle}
-                                            </span>
-                                            <img
-                                                src={iconImg}
-                                                alt="icon"
-                                                onClick={currentItem.modalContent.length > 1 ? handleModalChange : undefined}
-                                                style={{ 
-                                                    cursor: currentItem.modalContent.length === 1 ? "default" : "pointer",
-                                                    filter: currentItem.modalContent.length === 1 ? "opacity(0.5) drop-shadow(0 0 0 #7B7B7B)" : "none"
-                                                }}
-                                                disabled={currentItem.modalContent.length === 1}
-                                            />
-                                                <Motion style={{ height: spring(modal ? currentItem.modalContent.length * 40 : 0) }}>
-                                                    {({ height }) => (
-                                                        <Modal style={{ height }}>
-                                                            <ModalContent>
-                                                                {currentItem.modalContent.map((content, index) => (
-                                                                    <button
-                                                                    key={index}
-                                                                    onClick={() =>
-                                                                        {
-                                                                            if (currentItem.page === "/products") {
-                                                                                handleNavigate(
-                                                                                    `${currentItem.page}${currentItem.page}0${index + 1}/menu01`
-                                                                                )
-                                                                            } else {
-                                                                                handleNavigate(
-                                                                                    `${currentItem.page}${currentItem.page}0${index + 1}`
-                                                                                )
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                    >{content.title}</button>
-                                                                ))}
-                                                            </ModalContent>
-                                                        </Modal>
-                                                    )}
-                                                </Motion>
-                                        </Subtitle>
-                                        {currentItem.page === '/products' && (
-                                        <Subheading>
-                                                    <span onClick={subHandleModalChange}>
-                                                        {currentSubtitle.items.menu01}
+                                    <TextContainer>
+                                        {currentItem && (
+                                            <MiddleContainer>
+                                                <IconDiv>
+                                                    <img src={homeIcon} />
+                                                </IconDiv>
+                                                <Title>{item.title}</Title>
+                                                <Subtitle>
+                                                    <span onClick={currentItem.modalContent.length > 1 ? handleModalChange : undefined}>
+                                                        {currentItem.modalContent.length > 1 ? currentSubtitle.title : currentSubtitle}
                                                     </span>
                                                     <img
-                                                        src={subIconImg}
+                                                        src={iconImg}
                                                         alt="icon"
-                                                        onClick={subHandleModalChange}
-                                                        style={{ cursor: 'pointer' }}
-                                                    />
-                                                    <Motion
+                                                        onClick={currentItem.modalContent.length > 1 ? handleModalChange : undefined}
                                                         style={{
-                                                            height: spring(subModal ? Object.keys(currentSubtitle.items).length * 40 : 0)
+                                                            cursor: currentItem.modalContent.length === 1 ? "default" : "pointer",
+                                                            filter: currentItem.modalContent.length === 1 ? "opacity(0.5) drop-shadow(0 0 0 #7B7B7B)" : "none"
                                                         }}
-                                                    >
+                                                        disabled={currentItem.modalContent.length === 1}
+                                                    />
+                                                    <Motion style={{ height: spring(modal ? currentItem.modalContent.length * 40 : 0) }}>
                                                         {({ height }) => (
-                                                            <SubModal style={{ height }}>
+                                                            <Modal style={{ height }}>
                                                                 <ModalContent>
-                                                                {Object.entries(currentSubtitle.items).map((item, itemIndex) => (
-                                                                    <button
-                                                                        key={itemIndex}
-                                                                        onClick={() => handleNavigate(`${location.pathname.split('/')[1]}/${location.pathname.split('/')[2]}/${item[0]}`)}
-                                                                    >
-                                                                        {item[1]}
-                                                                    </button>
-                                                                ))}
+                                                                    {currentItem.modalContent.map((content, index) => (
+                                                                        <button
+                                                                            key={index}
+                                                                            onClick={() => {
+                                                                                if (currentItem.page === "/products") {
+                                                                                    handleNavigate(
+                                                                                        `${currentItem.page}${currentItem.page}0${index + 1}/menu01`
+                                                                                    )
+                                                                                } else {
+                                                                                    handleNavigate(
+                                                                                        `${currentItem.page}${currentItem.page}0${index + 1}`
+                                                                                    )
+                                                                                }
+                                                                            }
+                                                                            }
+                                                                        >{content.title}</button>
+                                                                    ))}
                                                                 </ModalContent>
-                                                            </SubModal>
+                                                            </Modal>
                                                         )}
                                                     </Motion>
-                                        </Subheading>
-                                    )}
-                                    </MiddleContainer>
-                                    )}
-                                </TextContainer>
+                                                </Subtitle>
+                                                {currentItem.page === '/products' && (
+                                                    <Subheading>
+                                                        <span onClick={subHandleModalChange}>
+                                                            {currentSubtitle.items.menu01}
+                                                        </span>
+                                                        <img
+                                                            src={subIconImg}
+                                                            alt="icon"
+                                                            onClick={subHandleModalChange}
+                                                            style={{ cursor: 'pointer' }}
+                                                        />
+                                                        <Motion
+                                                            style={{
+                                                                height: spring(subModal ? Object.keys(currentSubtitle.items).length * 40 : 0)
+                                                            }}
+                                                        >
+                                                            {({ height }) => (
+                                                                <SubModal style={{ height }}>
+                                                                    <ModalContent>
+                                                                        {Object.entries(currentSubtitle.items).map((item, itemIndex) => (
+                                                                            <button
+                                                                                key={itemIndex}
+                                                                                onClick={() => handleNavigate(`${location.pathname.split('/')[1]}/${location.pathname.split('/')[2]}/${item[0]}`)}
+                                                                            >
+                                                                                {item[1]}
+                                                                            </button>
+                                                                        ))}
+                                                                    </ModalContent>
+                                                                </SubModal>
+                                                            )}
+                                                        </Motion>
+                                                    </Subheading>
+                                                )}
+                                            </MiddleContainer>
+                                        )}
+                                    </TextContainer>
                                 )}
                             </MenuItem>
                         ))}

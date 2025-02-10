@@ -8,6 +8,7 @@ import logo from '../imgs/longLogo.png';
 import menu from '../imgs/menuIcon.png';
 import topIcon from '../imgs/topIcon.png';
 import bottomIcon from '../imgs/bottomIcon.png';
+import MenuItems from './MenuItems';
 
 const slideDown = keyframes`
     from {
@@ -31,275 +32,235 @@ const slideUp = keyframes`
   }
 `;
 
-const menuItems = [
-  {
-      title: '회사 소개',
-      subtitle: '회사소개서',
-      page: '/company',
-      modalContent: [
-          { title: '회사 소개서', items: [] },
-          { title: '회사 전경', items: [] },
-      ],
-  },
-  {
-      title: '제품 소개',
-      subtitle: '피스, 나사',
-      page: '/products',
-      modalContent: [
-          {
-              title: '피스, 나사',
-              items: {
-                  menu01: '리벳',
-                  menu02: '직결 피스',
-                  menu03: '태핑 나사',
-                  menu04: '가구용 피스'
-              },
-          },
-          {
-              title: '볼트, 너트, 와셔, 앙카',
-              items: {
-                  menu01: '육각머리볼트, 건축용볼트',
-                  menu02: '볼트',
-                  menu03: '렌치볼트',
-                  menu04: '십자머리 볼트',
-                  menu05: '와셔',
-                  menu06: '앙카',
-                  menu07: '너트(1)',
-                  menu08: '너트(2)',
-                  menu09: '주문제작'
-              },
-          },
-          {
-              title: '화스너, 와이어, 클램프, 행거',
-              items: {
-                  menu01: '화스너, 베이스판, 빳지, 꺽쇠',
-                  menu02: '행거, 빔클램프',
-                  menu03: '브라켓, 새들',
-                  menu04: '틴버클, 체인, 와이어로프, 부속품',
-              },
-          },
-          {
-              title: '기타 제품',
-              items: {
-                  menu01: '기타제품',
-                  menu02: '인서트',
-                  menu03: '캡'},
-          },
-      ],
-  },
-  {
-      title: '문의하기',
-      subtitle: '고객지원',
-      page: '/contact',
-      modalContent: [
-          { title: '고객지원', items: [] },
-      ],
-  },
-  {
-      title: '사업장 안내',
-      subtitle: '오시는 길',
-      page: '/about',
-      modalContent: [
-          { title: '오시는 길', items: [] },
-      ],
-  },
-];
+const slideInRight = keyframes`
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+const slideOutLeft = keyframes`
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+`;
 
 const TopNavigation = () => {
-    const navigate = useNavigate();
-    const [hoveredButton, setHoveredButton] = useState(null);
-    const [isClosing, setIsClosing] = useState(false);
-    const [modal, setModal] = useState(false);
-    const [titleModal, setTitleModal] = useState(false);
-    const [subTitleModal, setSubTitleModal] = useState(false);
+  const navigate = useNavigate();
+  const [hoveredButton, setHoveredButton] = useState(null);
+  const [isClosing, setIsClosing] = useState(false);
+  const [phoneClosing, setPhoneClosing] = useState(false);
+  const [modal, setModal] = useState(false);
+  const [titleModal, setTitleModal] = useState(false);
+  const [subTitleModal, setSubTitleModal] = useState(false);
+  const menuItems = MenuItems();
 
-    const menuRef = useRef(null);
-    const hoverTimeout = useRef(null);
-    const isMobile = useMediaQuery({ query: '(max-width: 1000px)' });
+  const menuRef = useRef(null);
+  const hoverTimeout = useRef(null);
+  const isMobile = useMediaQuery({ query: '(max-width: 1000px)' });
 
-    const handleMouseEnter = (buttonName) => {
-        if (hoverTimeout.current) {
-            clearTimeout(hoverTimeout.current);
-            hoverTimeout.current = null;
-        }
-        setHoveredButton(buttonName);
+  const handleMouseEnter = (buttonName) => {
+    if (hoverTimeout.current) {
+      clearTimeout(hoverTimeout.current);
+      hoverTimeout.current = null;
+    }
+    setHoveredButton(buttonName);
+    setIsClosing(false);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeout.current = setTimeout(() => {
+      setIsClosing(true);
+      setTimeout(() => {
+        setHoveredButton(null);
         setIsClosing(false);
-    };
-    
-    const handleMouseLeave = () => {
-        hoverTimeout.current = setTimeout(() => {
-            setIsClosing(true);
-            setTimeout(() => {
-              setHoveredButton(null);
-              setIsClosing(false);
-            }, 150);
-          }, 1000);
-    };
+      }, 150);
+    }, 1000);
+  };
 
-    const handleModalChange = () => {
+  const handleModalChange = () => {
+    if (modal) {
+      setPhoneClosing(true);
+      setTimeout(() => {
+        setPhoneClosing(false);
+        setModal(false);
+      }, 300);
+    } else {
+      setModal(true);
+    }
+  };
+
+  const handleTitleModalChange = (index) => {
+    if (titleModal === index) {
+      setTitleModal(null);
+    } else {
+      setTitleModal(index);
+    }
+  };
+
+  const subHandleModalChange = (index) => {
+    if (subTitleModal === index) {
+      setSubTitleModal(null);
+    } else {
+      setSubTitleModal(index);
+    }
+  };
+
+  const handleNavigate = (path) => {
+    if (modal === true) {
       setModal(!modal);
+    }
+
+    if (titleModal === true) {
+      setTitleModal(!modal);
+    }
+
+    if (subTitleModal === true) {
+      setSubTitleModal(!subTitleModal);
+    }
+
+    navigate(path);
+  };
+
+  const modalContent = {
+    company: ['회사 소개서', '회사 전경'],
+    products: ['피스, 나사', '볼트, 너트, 와셔, 앙카', '화스너, 와이어, 클램프, 행거', '기타 제품'],
+    contact: ['고객지원'],
+    about: ['오시는 길'],
+  };
+
+  useEffect(() => {
+    return () => {
+      if (hoverTimeout.current) {
+        clearTimeout(hoverTimeout.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setModal(false);
+      }
     };
 
-      const handleTitleModalChange = (index) => {
-        if (titleModal === index) {
-            setTitleModal(null);
-        } else {
-            setTitleModal(index);
-        }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
     };
+  }, []);
 
-    const subHandleModalChange = (index) => {
-        if (subTitleModal === index) {
-            setSubTitleModal(null);
-        } else {
-            setSubTitleModal(index);
-        }
-    };
-
-    const handleNavigate = (path) => {
-        if(modal === true) {
-            setModal(!modal);
-        }
-
-        if(titleModal === true) {
-            setTitleModal(!modal);
-        }
-
-        if(subTitleModal === true) {
-            setSubTitleModal(!subTitleModal);
-        }
-
-        navigate(path);
-    };
-    
-    const modalContent = {
-        company: ['회사 소개서', '회사 전경'],
-        products:  ['피스, 나사', '볼트, 너트, 와셔, 앙카', '화스너, 와이어, 클램프, 행거', '기타 제품'],
-        contact: ['고객지원'],
-        about: ['오시는 길'],
-    };
-
-    useEffect(() => {
-        return () => {
-          if (hoverTimeout.current) {
-            clearTimeout(hoverTimeout.current);
-          }
-        };
-    }, []);
-
-    useEffect(() => {
-      const handleClickOutside = (event) => {
-          if (menuRef.current && !menuRef.current.contains(event.target)) {
-              setModal(false);
-          }
-      };
-  
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => {
-          document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }, []);
-
-    return (
-        <Container>
-          <Navbar>
-            <Navbar.Brand>
-              <NavContaniner>
-              <NavDiv>
-                <LogoImg onClick={() => handleNavigate("/")}>
-                  <img alt="logo" src={logo} />
-                </LogoImg>
-                {isMobile ? (
-                  <MenuDiv ref={menuRef}>
-                    <MenuBtn onClick={handleModalChange}>
-                      <img src={menu} alt="menu" />
-                    </MenuBtn>
-                    {modal && (
-                      <MenuModal>
-                        {menuItems.map((item, index) => (
-                          <MenuItem key={index}>
-                              <TitleButton onClick={() => {
-                                  if(item.modalContent.length > 1) {
-                                    handleTitleModalChange(index)
-                                  } else {
-                                    handleNavigate(`${item.page}`)
-                                  }
-                                }}>
-                                  {item.title}
-                                  {item.modalContent.length > 1 && (
-                                    <Icon src={titleModal === index ? topIcon : bottomIcon} alt="toggle" />
-                                  )}
-                              </TitleButton>
-
-                              {titleModal === index && (
-                              <SubMenu>
-                                  {item.modalContent.map((subItem, subIndex) => (
-                                    <React.Fragment key={subIndex}>
-                                        <SubItem onClick={() => {
-                                          if(item.page === "/products") {
-                                            subHandleModalChange(subIndex)
-                                          } else {
-                                            handleNavigate(
-                                              `${item.page}/${item.page}0${subIndex + 1}`
-                                            )
-                                          }
-                                        }}>
-                                            {subItem.title}
-                                            {item.title === "제품 소개" && (
-                                                <Icon src={subTitleModal === subIndex ? topIcon : bottomIcon} alt="toggle" />
-                                            )}
-                                        </SubItem>
-
-                                        {subTitleModal === subIndex && (
-                                            <SubMenuList>
-                                                {Object.values(subItem.items).map((menuItem, menuIndex) => (
-                                                    <SubMenuItem key={menuIndex}>
-                                                      <button onClick={() => handleNavigate(`${item.page}/${item.page}0${subIndex + 1}/menu0${menuIndex + 1}`)}>{menuItem}</button>
-                                                      </SubMenuItem>
-                                                ))}
-                                            </SubMenuList>
-                                        )}
-                                    </React.Fragment>
-                                ))}
-                              </SubMenu>
+  return (
+    <Container>
+      <Navbar>
+        <Navbar.Brand>
+          <NavContaniner>
+            <NavDiv>
+              <LogoImg onClick={() => handleNavigate("/")}>
+                <img alt="logo" src={logo} />
+              </LogoImg>
+              {isMobile ? (
+                <MenuDiv ref={menuRef}>
+                  <MenuBtn onClick={handleModalChange}>
+                    <img src={menu} alt="menu" />
+                  </MenuBtn>
+                  {modal && (
+                    <MenuModal $phoneClosing={phoneClosing}>
+                      {menuItems.map((item, index) => (
+                        <MenuItem key={index}>
+                          <TitleButton onClick={() => {
+                            if (item.modalContent.length > 1) {
+                              handleTitleModalChange(index)
+                            } else {
+                              handleNavigate(`${item.page}`)
+                            }
+                          }}>
+                            {item.title}
+                            {item.modalContent.length > 1 && (
+                              <Icon src={titleModal === index ? topIcon : bottomIcon} alt="toggle" />
                             )}
-                          </MenuItem>
+                          </TitleButton>
+
+                          {titleModal === index && (
+                            <SubMenu>
+                              {item.modalContent.map((subItem, subIndex) => (
+                                <React.Fragment key={subIndex}>
+                                  <SubItem onClick={() => {
+                                    if (item.page === "/products") {
+                                      subHandleModalChange(subIndex)
+                                    } else {
+                                      handleNavigate(
+                                        `${item.page}/${item.page}0${subIndex + 1}`
+                                      )
+                                    }
+                                  }}>
+                                    {subItem.title}
+                                    {item.title === "제품 소개" && (
+                                      <Icon src={subTitleModal === subIndex ? topIcon : bottomIcon} alt="toggle" />
+                                    )}
+                                  </SubItem>
+
+                                  {subTitleModal === subIndex && (
+                                    <SubMenuList>
+                                      {Object.values(subItem.items).map((menuItem, menuIndex) => (
+                                        <SubMenuItem key={menuIndex}>
+                                          <button onClick={() => handleNavigate(`${item.page}/${item.page}0${subIndex + 1}/menu0${menuIndex + 1}`)}>{menuItem}</button>
+                                        </SubMenuItem>
+                                      ))}
+                                    </SubMenuList>
+                                  )}
+                                </React.Fragment>
+                              ))}
+                            </SubMenu>
+                          )}
+                        </MenuItem>
                       ))}
-                      </MenuModal>
-                    )}
-                  </MenuDiv>
-                ) : (
-                  <ButtonDiv>
-                      {Object.keys(modalContent).map((key) => (
-                        <ButtonWrapper
-                          key={key}
-                          onMouseEnter={() => modalContent[key].length > 1 && handleMouseEnter(key)}
-                          onMouseLeave={() => modalContent[key].length > 1 && handleMouseLeave()}
-                        >
-                        <button onClick={() => {if (key === "products") {
-                            handleNavigate(`/${key}/${key}01/menu01`);
-                          } else {
-                            handleNavigate(key === "contact" || key === "about" ? `/${key}` : `/${key}/${key}01`);
-                          }}}>
-                          <span>{key === "company" ? "회사소개" : key === "products" ? "제품소개" : key === "contact" ? "문의하기" : "사업장 안내"}</span>
-                        </button>
-                        {hoveredButton === key && modalContent[key].length > 1 &&  (
-                            <Modal $isClosing={isClosing} $itemCount={modalContent[key].length}>
-                            {modalContent[key].map((item, index) => (
-                              <ModalItem key={index} onClick={() => handleNavigate(`/${key}/${key}0${index + 1}${key === "products" ? '/menu01' : ''}`)}>{item}</ModalItem>
-                            ))}
-                          </Modal>
-                        )}
-                      </ButtonWrapper>
-                    ))}
-                  </ButtonDiv>
-                )}
-              </NavDiv>
-              </NavContaniner>
-            </Navbar.Brand>
-          </Navbar>
-        </Container>
-    );
+                    </MenuModal>
+                  )}
+                </MenuDiv>
+              ) : (
+                <ButtonDiv>
+                  {Object.keys(modalContent).map((key) => (
+                    <ButtonWrapper
+                      key={key}
+                      onMouseEnter={() => modalContent[key].length > 1 && handleMouseEnter(key)}
+                      onMouseLeave={() => modalContent[key].length > 1 && handleMouseLeave()}
+                    >
+                      <button onClick={() => {
+                        if (key === "products") {
+                          handleNavigate(`/${key}/${key}01/menu01`);
+                        } else {
+                          handleNavigate(key === "contact" || key === "about" ? `/${key}` : `/${key}/${key}01`);
+                        }
+                      }}>
+                        <span>{key === "company" ? "회사소개" : key === "products" ? "제품소개" : key === "contact" ? "문의하기" : "사업장 안내"}</span>
+                      </button>
+                      {hoveredButton === key && modalContent[key].length > 1 && (
+                        <Modal $isClosing={isClosing} $itemCount={modalContent[key].length}>
+                          {modalContent[key].map((item, index) => (
+                            <ModalItem key={index} onClick={() => handleNavigate(`/${key}/${key}0${index + 1}${key === "products" ? '/menu01' : ''}`)}>{item}</ModalItem>
+                          ))}
+                        </Modal>
+                      )}
+                    </ButtonWrapper>
+                  ))}
+                </ButtonDiv>
+              )}
+            </NavDiv>
+          </NavContaniner>
+        </Navbar.Brand>
+      </Navbar>
+    </Container>
+  );
 };
 
 const Container = styled.div`
@@ -338,7 +299,7 @@ const NavDiv = styled.div`
     justify-content: space-between;
     align-items: center;
 `;
-  
+
 const LogoImg = styled.button`
     background: none;
     border: none;
@@ -363,7 +324,7 @@ const LogoImg = styled.button`
         }
     }
 `;
-  
+
 const ButtonDiv = styled.div`
     display: flex;
     flex-direction: row;
@@ -380,14 +341,14 @@ const ButtonDiv = styled.div`
       }
     }
 `;
-  
+
 const ButtonWrapper = styled.div`
     position: relative;
 `;
-  
+
 const Modal = styled.div`
     width: 180px;
-    height: ${(props) => props.$itemCount * 40 }px;
+    height: ${(props) => props.$itemCount * 40}px;
     position: absolute;
     top: 150%;
     right: -3rem;
@@ -401,7 +362,7 @@ const Modal = styled.div`
     animation: ${(props) => (props.$isClosing ? slideUp : slideDown)} 0.2s ease-out;
     z-index: 100;
 `;
-  
+
 const ModalItem = styled.button`
     padding: 8px 12px;
     font-size: 12px;
@@ -442,6 +403,7 @@ const MenuModal = styled.div`
     right: 0;
     background-color: #484954;
     z-index: 9999;
+    animation: ${(props) => (props.$phoneClosing ? slideOutLeft : slideInRight)} 0.3s ease-in-out;
 `;
 
 const MenuItem = styled.div`
@@ -506,28 +468,4 @@ const SubMenuItem = styled.button`
     }
 `;
 
-// 애니메이션 효과 추가
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-const slideIn = keyframes`
-  from {
-    transform: translateX(-10px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-`;
-
-  
 export default TopNavigation;

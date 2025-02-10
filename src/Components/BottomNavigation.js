@@ -10,8 +10,8 @@ const BottomNavigation = () => {
                 <Representative>
                     <img src={icon} alt="logo" />
                     <TextContainer>
-                    <span>공식 상호 : 동산볼트</span>
-                    <span>대표 이사 : 전명호</span>
+                        <span>공식 상호 : 동산볼트</span>
+                        <span>대표 이사 : 전명호</span>
                     </TextContainer>
                 </Representative>
                 <Divider />

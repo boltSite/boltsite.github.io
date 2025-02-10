@@ -3,7 +3,7 @@ import { Link, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import ProductSubNavPage from './ProductSubNavPage';
 
 const ProductNavPage = () => {
-    
+
     return (
         <div>
             <Routes>

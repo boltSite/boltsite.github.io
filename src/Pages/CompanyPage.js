@@ -2,20 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CompanyPage = (props) => {
-    
-    return (
-        <Container>
-            <Title>{props.title}</Title>
-            <Divider />
-            <ImageGrid>
-                {props.images.map((image, index) => (
-                    <ImageWrapper key={index}>
-                        <StyledImage src={image} alt={`Introduction ${index + 1}`} />
-                    </ImageWrapper>
-                ))}
-            </ImageGrid>
-        </Container>
-    );
+
+  return (
+    <Container>
+      <Title>{props.title}</Title>
+      <Divider />
+      <ImageGrid>
+        {props.images.map((image, index) => (
+          <ImageWrapper key={index}>
+            <StyledImage src={image} alt={`Introduction ${index + 1}`} />
+          </ImageWrapper>
+        ))}
+      </ImageGrid>
+    </Container>
+  );
 }
 
 const Container = styled.div`
