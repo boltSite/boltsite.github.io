@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script>
-    var redirect = sessionStorage.redirect;
-    console.log(redirect);
-    delete sessionStorage.redirect;
 
-    if (!redirect || redirect === '/') {
-      location.replace('/front');
-    } else {
-      location.replace(`/front${redirect}`);
-    }
-  </script>
+<head>
+    <script>
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+
+        if (!redirect && redirect !== '/') {
+            location.replace(`/front${redirect}`);
+        } else {
+            location.replace('/front');
+        }
+    </script>
 </head>
+
 <body>
-  Redirecting...
+    Redirecting...
 </body>
+
 </html>
