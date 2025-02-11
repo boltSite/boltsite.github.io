@@ -324,8 +324,10 @@ const Agreement = styled.div`
     align-items: center;
     gap: 10px;
 
-    label {
-        font-size: 13px;
+    @media screen and (max-width: 700px) {
+        label {
+            font-size: 13px;
+        }
     }
 `;
 
