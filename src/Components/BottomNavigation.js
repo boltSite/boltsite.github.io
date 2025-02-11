@@ -97,7 +97,7 @@ const Representative = styled.div`
 
     img {
         width: 150px;
-        height: 50px;
+        height: 45px;
         margin-bottom: 5px;
     }
 
