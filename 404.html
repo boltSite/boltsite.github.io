@@ -6,7 +6,7 @@
     delete sessionStorage.redirect;
 
     if (redirect && redirect !== location.href) {
-      location.replace(redirect);
+      location.replace(`/front/${redirect}`);
     } else {
       location.replace('/front');
     }
