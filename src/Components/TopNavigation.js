@@ -186,7 +186,7 @@ const TopNavigation = () => {
                           }}>
                             {item.title}
                             {item.modalContent.length > 1 && (
-                              <Icon src={titleModal === index ? topIcon : bottomIcon} alt="toggle" />
+                              <Icon src={titleModal === index ? topIcon : bottomIcon} style={{filter: "brightness(0) invert(1)"}} alt="toggle" />
                             )}
                           </TitleButton>
 
