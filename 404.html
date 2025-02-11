@@ -5,10 +5,10 @@
     var redirect = sessionStorage.redirect;
     delete sessionStorage.redirect;
 
-    if (redirect && redirect !== location.href) {
-      location.replace(`/front/${redirect}`);
-    } else {
+    if (!redirect || redirect === '/') {
       location.replace('/front');
+    } else {
+      location.replace(`/front${redirect}`);
     }
   </script>
 </head>
