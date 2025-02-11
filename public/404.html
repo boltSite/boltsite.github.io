@@ -3,6 +3,8 @@
 <head>
   <script>
     var redirect = sessionStorage.redirect;
+    console.log(redirect);
+    delete sessionStorage.redirect;
 
     if (!redirect || redirect === '/') {
       location.replace('/front');
