@@ -2,8 +2,14 @@
 <html>
 <head>
   <script>
-    sessionStorage.redirect = location.href;
-    location.replace('/');
+    var redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+
+    if (redirect && redirect !== location.href) {
+      location.replace(redirect);
+    } else {
+      location.replace('/front');
+    }
   </script>
 </head>
 <body>
