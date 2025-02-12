@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Motion, spring } from 'react-motion';
 import homeIcon from '../imgs/homeIcon.png';
 import topIcon from '../imgs/topIcon.png';
 import bottomIcon from '../imgs/bottomIcon.png';
@@ -49,11 +49,11 @@ const MiddleNavigation = () => {
     }
 
     useEffect(() => {
-        if (currentItem) {
+        if (modal) {
             setModal(false);
             setIconImg(bottomIcon);
         }
-    }, [location.pathname, currentItem]);
+    }, [location.pathname]);
 
     if (!currentItem) {
         return null;
@@ -93,26 +93,22 @@ const MiddleNavigation = () => {
                                                     <img src={homeIcon} />
                                                 </IconDiv>
                                                 <Title>{item.title}</Title>
-                                                <Subtitle>
-                                                    <span onClick={currentItem.modalContent.length > 1 ? handleModalChange : undefined}>
+                                                <Subtitle 
+                                                    onClick={currentItem.modalContent.length > 1 ? handleModalChange : undefined}
+                                                    style={{
+                                                        cursor: currentItem.modalContent.length === 1 ? "default" : "pointer",
+                                                        filter: currentItem.modalContent.length === 1 ? "opacity(0.5) drop-shadow(0 0 0 #7B7B7B)" : "none"
+                                                    }}>
+                                                    <span>
                                                         {currentItem.modalContent.length > 1 ? currentSubtitle.title : currentSubtitle}
                                                     </span>
                                                     <img
                                                         src={iconImg}
                                                         alt="icon"
-                                                        onClick={currentItem.modalContent.length > 1 ? handleModalChange : undefined}
-                                                        style={{
-                                                            cursor: currentItem.modalContent.length === 1 ? "default" : "pointer",
-                                                            filter: currentItem.modalContent.length === 1 ? "opacity(0.5) drop-shadow(0 0 0 #7B7B7B)" : "none"
-                                                        }}
                                                     />
-                                                    <AnimatePresence>
-                                                        {modal && (
-                                                            <MotionContainer
-                                                                initial={{ height: 0 }}
-                                                                animate={{ height: currentItem.modalContent.length * 40 }}
-                                                                exit={{ height: 0 }}
-                                                            >
+                                                    <Motion style={{ height: spring(modal ? currentItem.modalContent.length * 40 : 0) }}>
+                                                        {({ height }) => (
+                                                            <Modal style={{ height }}>
                                                                 <ModalContent>
                                                                     {currentItem.modalContent.map((content, index) => (
                                                                         <button
@@ -133,28 +129,27 @@ const MiddleNavigation = () => {
                                                                         </button>
                                                                     ))}
                                                                 </ModalContent>
-                                                            </MotionContainer>
+                                                            </Modal>
                                                         )}
-                                                    </AnimatePresence>
+                                                    </Motion>
                                                 </Subtitle>
                                                 {currentItem.page === '/products' && (
-                                                    <Subheading>
-                                                        <span onClick={subHandleModalChange}>
+                                                    <Subheading onClick={subHandleModalChange}
+                                                        style={{ cursor: 'pointer' }}>
+                                                        <span>
                                                             {currentSubtitle.items.menu01}
                                                         </span>
                                                         <img
                                                             src={subIconImg}
                                                             alt="icon"
-                                                            onClick={subHandleModalChange}
-                                                            style={{ cursor: 'pointer' }}
                                                         />
-                                                        <AnimatePresence>
-                                                            {subModal && (
-                                                                <MotionContainer
-                                                                    initial={{ height: 0 }}
-                                                                    animate={{ height: Object.keys(currentSubtitle.items).length * 40 }}
-                                                                    exit={{ height: 0 }}
-                                                                >
+                                                        <Motion
+                                                            style={{
+                                                                height: spring(subModal ? Object.keys(currentSubtitle.items).length * 40 : 0)
+                                                            }}
+                                                        >
+                                                            {({ height }) => (
+                                                                <SubModal style={{ height }}>
                                                                     <ModalContent>
                                                                         {Object.entries(currentSubtitle.items).map((item, itemIndex) => (
                                                                             <button
@@ -165,9 +160,9 @@ const MiddleNavigation = () => {
                                                                             </button>
                                                                         ))}
                                                                     </ModalContent>
-                                                                </MotionContainer>
+                                                                </SubModal>
                                                             )}
-                                                        </AnimatePresence>
+                                                        </Motion>
                                                     </Subheading>
                                                 )}
                                             </MiddleContainer>
@@ -184,16 +179,6 @@ const MiddleNavigation = () => {
 
 const Container = styled.div`
     
-`;
-
-const MotionContainer = styled(motion.div)`
-    position: absolute;
-    width: 111%;
-    top: 100%;
-    right: 0;
-    background-color: #ffffff;
-    overflow: hidden;
-    border-bottom: 1px solid #cecece;
 `;
 
 const PageNav = styled.div`
