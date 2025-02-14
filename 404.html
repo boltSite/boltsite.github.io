@@ -3,7 +3,7 @@
 
 <head>
     <script>
-        var redirect = sessionStorage.redirect;
+        var redirect = sessionStorage.getItem('redirect');
         delete sessionStorage.redirect;
 
         location.replace(redirect);
