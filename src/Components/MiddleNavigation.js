@@ -16,6 +16,7 @@ const MiddleNavigation = () => {
     const [subIconImg, setSubIconImg] = useState(bottomIcon);
     const [modal, setModal] = useState(false);
     const [subModal, setSubModal] = useState(false);
+    const [selectedSubMenu, setSelectedSubMenu] = useState('menu01');
     const isMobile = useMediaQuery({ query: '(max-width: 1000px)' });
     const menuItems = MenuItems();
 
@@ -137,7 +138,7 @@ const MiddleNavigation = () => {
                                                     <Subheading onClick={subHandleModalChange}
                                                         style={{ cursor: 'pointer' }}>
                                                         <span>
-                                                            {currentSubtitle.items.menu01}
+                                                            {currentSubtitle.items[selectedSubMenu]}
                                                         </span>
                                                         <img
                                                             src={subIconImg}
@@ -154,7 +155,10 @@ const MiddleNavigation = () => {
                                                                         {Object.entries(currentSubtitle.items).map((item, itemIndex) => (
                                                                             <button
                                                                                 key={itemIndex}
-                                                                                onClick={() => handleNavigate(`${location.pathname.split('/')[1]}/${location.pathname.split('/')[2]}/${item[0]}`)}
+                                                                                onClick={() => {
+                                                                                    setSelectedSubMenu(item[0]);
+                                                                                    handleNavigate(`${location.pathname.split('/')[1]}/${location.pathname.split('/')[2]}/${item[0]}`)
+                                                                                }}
                                                                             >
                                                                                 {item[1]}
                                                                             </button>
@@ -346,6 +350,7 @@ const SubModal = styled.div`
     right: 0;
     background-color: #ffffff;
     overflow: hidden;
+    border-bottom: 1px solid #cecece;
 `;
 
 const ModalContent = styled.div`
@@ -364,6 +369,7 @@ const ModalContent = styled.div`
         &:hover {
             color: #34037A;
             font-weight: 600;
+            font-size: 13.6px;
             text-decoration: underline;
             text-decoration-color: #34037A;
         }
