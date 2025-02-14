@@ -1,5 +1,5 @@
-import React , { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import MainPage from '../Pages/MainPage';
 import TopNavigation from '../Components/TopNavigation';
 import MiddleNavigation from '../Components/MiddleNavigation';
@@ -10,11 +10,6 @@ import CompanyNavPage from '../Pages/CompanyNavPage';
 import ProductNavPage from '../Pages/ProductNavPage';
 
 const NavigationWrapper = () => {
-    const location = useLocation();
-
-    useEffect(() => {
-        sessionStorage.setItem('redirect', location.pathname + location.search);
-    }, [location]);
 
     return (
         <div>
