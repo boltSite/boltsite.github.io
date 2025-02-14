@@ -22,8 +22,18 @@ const ContactPage = () => {
 
     const handleChange = (e) => {
         const { name, value, files } = e.target;
+        
         if (name === 'file') {
-            setFormData((prev) => ({ ...prev, files: Array.from(files) }));
+            let selectedFiles = Array.from(files);
+            let totalSize = selectedFiles.reduce((sum, file) => sum + file.size, 0);
+    
+            if (totalSize > 25 * 1024 * 1024) { // 25MB 제한
+                alert("첨부 파일의 총 크기는 25MB를 초과할 수 없습니다.");
+                e.target.value = '';
+                return;
+            }
+    
+            setFormData((prev) => ({ ...prev, files: selectedFiles }));
         } else {
             setFormData((prev) => ({ ...prev, [name]: value }));
         }
