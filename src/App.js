@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className="App">
       <GlobalStyle />
-      <BrowserRouter basename={process.env.REACT_APP_PUBLIC_URL}>
+      <BrowserRouter>
         <NavigationWrapper />
       </BrowserRouter>
     </div>
