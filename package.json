@@ -16,7 +16,6 @@
     "react-responsive": "^10.0.0",
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
-    "react-snap": "^1.23.0",
     "react-transition-group": "^4.4.5",
     "styled-components": "^6.1.14",
     "web-vitals": "^4.2.4"
@@ -27,11 +26,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "postbuild": "react-snap"
-  },
-  "reactSnap": {
-    "inlineCss": true
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
