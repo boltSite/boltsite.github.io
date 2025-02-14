@@ -4,9 +4,13 @@
 <head>
     <script>
         var redirect = sessionStorage.getItem('redirect');
-        delete sessionStorage.redirect;
+        // delete sessionStorage.redirect;
 
-        location.replace(redirect);
+        if (redirect) {
+            location.replace(redirect);
+        } else {
+            location.replace('/');
+        }
     </script>
 </head>
 
