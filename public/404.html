@@ -6,8 +6,8 @@
         var redirect = sessionStorage.redirect;
         delete sessionStorage.redirect;
 
-        if (!redirect && redirect !== '/') {
-            location.replace(`/${redirect}`);
+        if (redirect && redirect !== location.href) {
+            location.replace(redirect);
         } else {
             location.replace('/');
         }
