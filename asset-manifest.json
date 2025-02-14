@@ -1,20 +1,32 @@
 {
   "files": {
     "main.css": "/static/css/main.ca67ef22.css",
-    "main.js": "/static/js/main.0eff11ac.js",
-    "static/js/488.51a61054.chunk.js": "/static/js/488.51a61054.chunk.js",
+    "main.js": "/static/js/main.5da7a29f.js",
+    "static/js/488.67b26ee4.chunk.js": "/static/js/488.67b26ee4.chunk.js",
     "static/media/Company14.jpeg": "/static/media/Company14.00a7a7f505c5141bfce9.jpeg",
     "static/media/main4.jpg": "/static/media/main4.2ac06c304ac953e18a20.jpg",
+    "static/media/NotoSansKR-Light.otf": "/static/media/NotoSansKR-Light.7d4ce2f6f92cffc70600.otf",
+    "static/media/NotoSansKR-Bold.otf": "/static/media/NotoSansKR-Bold.bbb4ca5df6c6540f4af8.otf",
+    "static/media/NotoSansKR-Regular.otf": "/static/media/NotoSansKR-Regular.bf54b090356010039bab.otf",
+    "static/media/NotoSansKR-Medium.otf": "/static/media/NotoSansKR-Medium.7def03a7e5e60c5e0704.otf",
     "static/media/main3.jpg": "/static/media/main3.ad63193b3c189d651ce2.jpg",
     "static/media/Company15.jpeg": "/static/media/Company15.6902260553c5c40d7b43.jpeg",
+    "static/media/NotoSansKR-Bold.woff": "/static/media/NotoSansKR-Bold.bccfd5fe964d7e12ae44.woff",
     "static/media/Company12.jpeg": "/static/media/Company12.648f1b25cef02b6dc6f8.jpeg",
     "static/media/Company11.jpeg": "/static/media/Company11.e9053a84e8ef2c198877.jpeg",
     "static/media/main1.jpg": "/static/media/main1.7b6caacc1d9ab552cf0c.jpg",
+    "static/media/NotoSansKR-Regular.woff": "/static/media/NotoSansKR-Regular.957d49ad23632e4a9349.woff",
+    "static/media/NotoSansKR-Medium.woff": "/static/media/NotoSansKR-Medium.865a70c3c4af55e98eb5.woff",
+    "static/media/NotoSansKR-Light.woff": "/static/media/NotoSansKR-Light.45736342560b8c933202.woff",
     "static/media/Company13.jpeg": "/static/media/Company13.d79a3266919ed6dc8b2c.jpeg",
     "static/media/Company16.jpeg": "/static/media/Company16.bd2abbc31ba7e360172b.jpeg",
     "static/media/main2.jpg": "/static/media/main2.6f34763ceb25f3320246.jpg",
     "static/media/Introduction4.jpeg": "/static/media/Introduction4.abdf54996194e6fc12c6.jpeg",
     "static/media/Company10.jpeg": "/static/media/Company10.5c98ee34ab0b39a305c3.jpeg",
+    "static/media/NotoSansKR-Regular.woff2": "/static/media/NotoSansKR-Regular.e95adf0e9aeddac43f42.woff2",
+    "static/media/NotoSansKR-Bold.woff2": "/static/media/NotoSansKR-Bold.a4ecc3f7a43f7d43ce24.woff2",
+    "static/media/NotoSansKR-Medium.woff2": "/static/media/NotoSansKR-Medium.e5d0c16f11ebac0c56d2.woff2",
+    "static/media/NotoSansKR-Light.woff2": "/static/media/NotoSansKR-Light.e2557c2be18ddd169ee9.woff2",
     "static/media/Introduction1.jpeg": "/static/media/Introduction1.389b806a39fff0f3fd41.jpeg",
     "static/media/product01Image5.png": "/static/media/product01Image5.7db44ecef2a37180b6f4.png",
     "static/media/Introduction6.jpeg": "/static/media/Introduction6.73dce00e44d5433c486c.jpeg",
@@ -140,11 +152,11 @@
     "static/media/deliveryIcon.png": "/static/media/deliveryIcon.0459258e13e87e483ddd.png",
     "index.html": "/index.html",
     "main.ca67ef22.css.map": "/static/css/main.ca67ef22.css.map",
-    "main.0eff11ac.js.map": "/static/js/main.0eff11ac.js.map",
-    "488.51a61054.chunk.js.map": "/static/js/488.51a61054.chunk.js.map"
+    "main.5da7a29f.js.map": "/static/js/main.5da7a29f.js.map",
+    "488.67b26ee4.chunk.js.map": "/static/js/488.67b26ee4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ca67ef22.css",
-    "static/js/main.0eff11ac.js"
+    "static/js/main.5da7a29f.js"
   ]
 }
