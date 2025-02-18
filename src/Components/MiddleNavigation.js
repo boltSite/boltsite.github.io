@@ -12,11 +12,13 @@ const MiddleNavigation = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const isMainPage = location.pathname === '/';
+    const pathSegments = location.pathname.split('/');
     const [iconImg, setIconImg] = useState(bottomIcon);
     const [subIconImg, setSubIconImg] = useState(bottomIcon);
     const [modal, setModal] = useState(false);
     const [subModal, setSubModal] = useState(false);
-    const [selectedSubMenu, setSelectedSubMenu] = useState('menu01');
+    const currentMenu = pathSegments.length > 2 ? pathSegments[pathSegments.length - 1] : 'menu01';
+    const [selectedSubMenu, setSelectedSubMenu] = useState(currentMenu);
     const isMobile = useMediaQuery({ query: '(max-width: 1000px)' });
     const menuItems = MenuItems();
 
@@ -53,6 +55,9 @@ const MiddleNavigation = () => {
         if (modal) {
             setModal(false);
             setIconImg(bottomIcon);
+        }
+        if (!isMainPage) {
+            setSelectedSubMenu(currentMenu);
         }
     }, [location.pathname]);
 
