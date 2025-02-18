@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { updateFormData, resetFormData } from '../store/actions/formActions';
 import axios from 'axios';
 import closeIcon from '../imgs/closeIcon.png';
 
 const ContactPage = () => {
-    const dispatch = useDispatch();
-    const formData = useSelector(state => state.form);
-    const navigate = useNavigate();
     const [showModal, setShowModal] = useState(false);
+    const [formData, setFormData] = useState({
+        title: '',
+        message: '',
+        contact: '',
+        email: '',
+        files: [],
+    });
     const server_url = process.env.REACT_APP_EMAIL_SERVER_URL;
+    const navigate = useNavigate();
 
     const toggleModal = () => {
         setShowModal(!showModal);
@@ -20,7 +23,7 @@ const ContactPage = () => {
     const handleChange = (e) => {
         const { name, value, files } = e.target;
         
-        if (name === 'files') {
+        if (name === 'file') {
             let selectedFiles = Array.from(files);
             let totalSize = selectedFiles.reduce((sum, file) => sum + file.size, 0);
     
@@ -30,14 +33,9 @@ const ContactPage = () => {
                 return;
             }
     
-            const fileDetails = selectedFiles.map(file => ({
-                name: file.name,
-                size: file.size,
-                type: file.type
-            }));
-            dispatch(updateFormData({ files: fileDetails }));
+            setFormData((prev) => ({ ...prev, files: selectedFiles }));
         } else {
-            dispatch(updateFormData({ [name]: value }));
+            setFormData((prev) => ({ ...prev, [name]: value }));
         }
     };
 
@@ -114,7 +112,7 @@ const ContactPage = () => {
                 <FormGroup style={{ borderBottom: '1px solid #e9e9e9', paddingBottom: '1rem' }}>
                     <Label>파일첨부<span>File upload</span></Label>
                     <FileGroup>
-                        <Input type="file" name="files" onChange={handleChange} style={{ border: 'none', width: '400px' }} multiple />
+                        <Input type="file" name="file" onChange={handleChange} style={{ border: 'none', width: '400px' }} multiple />
                         <span>첨부 파일은 총 25MB 이하이며, Excel, MS Word, HWP, PDF, PNG, GIF, JPG 형식만 등록할 수 있습니다.</span>
                     </FileGroup>
                 </FormGroup>
