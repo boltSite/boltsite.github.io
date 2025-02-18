@@ -22,7 +22,7 @@
       // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
       // https://username.github.io/repo-name/?/one/two&a=b~and~c=d#qwe
       // Otherwise, leave pathSegmentsToKeep as 0.
-      var pathSegmentsToKeep = 1;
+      var pathSegmentsToKeep = 1;  // GitHub Pages를 위해 프로젝트 루트 경로 포함
 
       var l = window.location;
       l.replace(
@@ -32,7 +32,6 @@
         (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
         l.hash
       );
-
     </script>
   </head>
   <body>
