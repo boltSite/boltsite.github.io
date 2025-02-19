@@ -67,7 +67,7 @@ const ImageGrid = styled.div`
     display: flex;
     flex-direction: row;
     gap: 20px;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
 
     @media screen and (max-width: 1100px) {
