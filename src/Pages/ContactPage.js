@@ -60,11 +60,11 @@ const ContactPage = () => {
         alert('문의가 정상적으로 접수되었습니다!');
         navigate("/");
 
-        axios.post(`${server_url}/send-email`, formDataToSend, {
-            headers: { 'Content-Type': 'multipart/form-data' }
-        }).catch(() => {
-            alert('이메일 전송 중 오류가 발생했습니다.');
-        });
+        // axios.post(`${server_url}/send-email`, formDataToSend, {
+        //     headers: { 'Content-Type': 'multipart/form-data' }
+        // }).catch(() => {
+        //     alert('이메일 전송 중 오류가 발생했습니다.');
+        // });
     };
 
     const handleCancel = () => {
@@ -125,7 +125,7 @@ const ContactPage = () => {
                 </Agreement>
                 <ButtonGroup>
                     <SubmitButton>등록</SubmitButton>
-                    <CancelButton onClick={handleCancel}>취소</CancelButton>
+                    <CancelButton type='button' onClick={handleCancel}>취소</CancelButton>
                 </ButtonGroup>
             </MiddleContainer>
             {showModal && (

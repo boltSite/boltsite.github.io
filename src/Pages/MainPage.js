@@ -57,7 +57,7 @@ const MainPage = () => {
 
     return (
         <Container>
-            <ImageContainer image={images[currentIndex]}>
+            <ImageContainer $image={images[currentIndex]}>
                 <Overlay>
                     <Title>품질과 신뢰</Title>
                     <Description>
@@ -106,7 +106,7 @@ const ImageContainer = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url(${(props) => props.image});
+    background-image: url(${(props) => props.$image});
     background-size: cover;
     background-position: center;
     transition: background-image 0.5s ease-in-out;

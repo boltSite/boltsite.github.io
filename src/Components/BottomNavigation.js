@@ -31,7 +31,7 @@ const BottomNavigation = () => {
                 <Divider />
                 <Information>
                     <span>홈페이지 관리자 : 전재현</span>
-                    <span>개인정보보호 책임자 : 손도휘</span>
+                    <span>개인정보보호 책임자 : 전재현</span>
                     <span>이메일 : dongsanbolt@daum.net</span>
                 </Information>
             </TopContainer>

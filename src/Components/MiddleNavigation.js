@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import { Motion, spring } from 'react-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import homeIcon from '../imgs/homeIcon.png';
 import topIcon from '../imgs/topIcon.png';
 import bottomIcon from '../imgs/bottomIcon.png';
@@ -99,7 +99,7 @@ const MiddleNavigation = () => {
                                                     <img src={homeIcon} />
                                                 </IconDiv>
                                                 <Title>{item.title}</Title>
-                                                <Subtitle 
+                                                <Subtitle
                                                     onClick={currentItem.modalContent.length > 1 ? handleModalChange : undefined}
                                                     style={{
                                                         cursor: currentItem.modalContent.length === 1 ? "default" : "pointer",
@@ -112,9 +112,13 @@ const MiddleNavigation = () => {
                                                         src={iconImg}
                                                         alt="icon"
                                                     />
-                                                    <Motion style={{ height: spring(modal ? currentItem.modalContent.length * 40 : 0) }}>
-                                                        {({ height }) => (
-                                                            <Modal style={{ height }}>
+                                                    <AnimatePresence>
+                                                        {modal && (
+                                                            <MotionContainer
+                                                                initial={{ height: 0 }}
+                                                                animate={{ height: currentItem.modalContent.length * 40 }}
+                                                                exit={{ height: 0 }}
+                                                            >
                                                                 <ModalContent>
                                                                     {currentItem.modalContent.map((content, index) => (
                                                                         <button
@@ -135,9 +139,9 @@ const MiddleNavigation = () => {
                                                                         </button>
                                                                     ))}
                                                                 </ModalContent>
-                                                            </Modal>
+                                                            </MotionContainer>
                                                         )}
-                                                    </Motion>
+                                                    </AnimatePresence>
                                                 </Subtitle>
                                                 {currentItem.page === '/products' && (
                                                     <Subheading onClick={subHandleModalChange}
@@ -149,13 +153,13 @@ const MiddleNavigation = () => {
                                                             src={subIconImg}
                                                             alt="icon"
                                                         />
-                                                        <Motion
-                                                            style={{
-                                                                height: spring(subModal ? Object.keys(currentSubtitle.items).length * 40 : 0)
-                                                            }}
-                                                        >
-                                                            {({ height }) => (
-                                                                <SubModal style={{ height }}>
+                                                        <AnimatePresence>
+                                                            {subModal && (
+                                                                <MotionContainer
+                                                                    initial={{ height: 0 }}
+                                                                    animate={{ height: Object.keys(currentSubtitle.items).length * 40 }}
+                                                                    exit={{ height: 0 }}
+                                                                >
                                                                     <ModalContent>
                                                                         {Object.entries(currentSubtitle.items).map((item, itemIndex) => (
                                                                             <button
@@ -169,9 +173,9 @@ const MiddleNavigation = () => {
                                                                             </button>
                                                                         ))}
                                                                     </ModalContent>
-                                                                </SubModal>
+                                                                </MotionContainer>
                                                             )}
-                                                        </Motion>
+                                                        </AnimatePresence>
                                                     </Subheading>
                                                 )}
                                             </MiddleContainer>
@@ -188,6 +192,16 @@ const MiddleNavigation = () => {
 
 const Container = styled.div`
     
+`;
+
+const MotionContainer = styled(motion.div)`
+    position: absolute;
+    width: 111%;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    overflow: hidden;
+    border-bottom: 1px solid #cecece;
 `;
 
 const PageNav = styled.div`
@@ -336,26 +350,6 @@ const Subheading = styled.div`
         height: 15px;
         margin-right: 0.8rem;
     }
-`;
-
-const Modal = styled.div`
-    position: absolute;
-    width: 111%;
-    top: 100%;
-    right: 0;
-    background-color: #ffffff;
-    overflow: hidden;
-    border-bottom: 1px solid #cecece;
-`;
-
-const SubModal = styled.div`
-    position: absolute;
-    width: 111%;
-    top: 100%;
-    right: 0;
-    background-color: #ffffff;
-    overflow: hidden;
-    border-bottom: 1px solid #cecece;
 `;
 
 const ModalContent = styled.div`

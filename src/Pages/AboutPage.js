@@ -68,8 +68,8 @@ const AboutPage = () => {
                         <h3>경기도 김포시 대곶면 종생로 101</h3>
                     </TitleLeft>
                     <TitleRight>
-                        <button onClick={() => window.open("https://map.naver.com/p/directions/-/14092803.611160208,4529703.182250712,%EB%8F%99%EC%82%B0%EB%B3%BC%ED%8A%B8,,/-/transit?c=15.00,0,0,0,dh", "_blank")}>&ensp;<img src={RoadIcon} style={{ width: '18px', height: '18px', filter: 'brightness(0) invert(1)' }} />&nbsp;길찾기&ensp;</button>
-                        <button onClick={() => window.open("https://map.naver.com/p?title=%EB%8F%99%EC%82%B0%EB%B3%BC%ED%8A%B8&lng=126.5978088&lat=37.6471786&zoom=15&type=0&c=15.00,0,0,0,dh", "_blank")}>&ensp;<img src={PinIcon} style={{ width: '15px', height: '15px', filter: 'brightness(0) invert(1)' }} />&nbsp;지도에서 보기&ensp;</button>
+                        <button style={{ width: '90px' }} onClick={() => window.open("https://map.naver.com/p/directions/-/14092803.611160208,4529703.182250712,%EB%8F%99%EC%82%B0%EB%B3%BC%ED%8A%B8,,/-/transit?c=15.00,0,0,0,dh", "_blank")}>&ensp;<img src={RoadIcon} style={{ width: '18px', height: '18px', filter: 'brightness(0) invert(1)' }} />&nbsp;길찾기&ensp;</button>
+                        <button style={{ width: '120px' }} onClick={() => window.open("https://map.naver.com/p?title=%EB%8F%99%EC%82%B0%EB%B3%BC%ED%8A%B8&lng=126.5978088&lat=37.6471786&zoom=15&type=0&c=15.00,0,0,0,dh", "_blank")}>&ensp;<img src={PinIcon} style={{ width: '15px', height: '15px', filter: 'brightness(0) invert(1)' }} />&nbsp;지도에서 보기&ensp;</button>
                     </TitleRight>
                 </TitleContainer>
                 <TitleContainer style={{ height: '80px', paddingTop: '30px', borderTop: '1px solid #e9e9e9' }}>
@@ -78,8 +78,8 @@ const AboutPage = () => {
                         <h3>인천광역시 중구 전소로1번길 9-20, 1호</h3>
                     </TitleLeft>
                     <TitleRight>
-                        <button onClick={() => window.open("https://map.naver.com/p/directions/-/14092803.611160208,4529703.182250712,%EB%8F%99%EC%82%B0%EB%B3%BC%ED%8A%B8,,/-/transit?c=15.00,0,0,0,dh", "_blank")}>&ensp;<img src={RoadIcon} style={{ width: '18px', height: '18px', filter: 'brightness(0) invert(1)' }} />&nbsp;길찾기&ensp;</button>
-                        <button onClick={() => window.open("https://map.naver.com/p?title=%EB%8F%99%EC%82%B0%EB%B3%BC%ED%8A%B8&lng=126.5978088&lat=37.6471786&zoom=15&type=0&c=15.00,0,0,0,dh", "_blank")}>&ensp;<img src={PinIcon} style={{ width: '15px', height: '15px', filter: 'brightness(0) invert(1)' }} />&nbsp;지도에서 보기&ensp;</button>
+                        <button style={{ width: '90px' }} onClick={() => window.open("https://map.naver.com/p/directions/-/14092803.611160208,4529703.182250712,%EB%8F%99%EC%82%B0%EB%B3%BC%ED%8A%B8,,/-/transit?c=15.00,0,0,0,dh", "_blank")}>&ensp;<img src={RoadIcon} style={{ width: '18px', height: '18px', filter: 'brightness(0) invert(1)' }} />&nbsp;길찾기&ensp;</button>
+                        <button style={{ width: '120px' }} onClick={() => window.open("https://map.naver.com/p?title=%EB%8F%99%EC%82%B0%EB%B3%BC%ED%8A%B8&lng=126.5978088&lat=37.6471786&zoom=15&type=0&c=15.00,0,0,0,dh", "_blank")}>&ensp;<img src={PinIcon} style={{ width: '15px', height: '15px', filter: 'brightness(0) invert(1)' }} />&nbsp;지도에서 보기&ensp;</button>
                     </TitleRight>
                 </TitleContainer>
                 <Section>
