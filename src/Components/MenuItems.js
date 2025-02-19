@@ -24,10 +24,9 @@ const MenuItems = () => {
                 {
                     title: '피스, 나사',
                     items: {
-                        menu01: '리벳',
-                        menu02: '직결 피스',
-                        menu03: '태핑 나사',
-                        menu04: '가구용 피스'
+                        menu01: '리벳 & 직결 피스',
+                        menu02: '태핑 나사',
+                        menu03: '가구용 피스'
                     },
                 },
                 {
@@ -39,9 +38,8 @@ const MenuItems = () => {
                         menu04: '십자머리 볼트',
                         menu05: '와셔',
                         menu06: '앙카',
-                        menu07: '너트(1)',
-                        menu08: '너트(2)',
-                        menu09: '주문제작'
+                        menu07: '너트',
+                        menu08: '주문제작'
                     },
                 },
                 {

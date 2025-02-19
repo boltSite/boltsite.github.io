@@ -11,22 +11,29 @@ import Introduction6 from '../imgs/Introduction6.jpeg';
 import Introduction7 from '../imgs/Introduction7.jpeg';
 
 
-import Company1 from '../imgs/Company1.jpeg';
-import Company2 from '../imgs/Company2.jpeg';
-import Company3 from '../imgs/Company3.jpeg';
-import Company4 from '../imgs/Company4.jpeg';
-import Company5 from '../imgs/Company5.jpeg';
-import Company6 from '../imgs/Company6.jpeg';
-import Company7 from '../imgs/Company7.jpeg';
-import Company8 from '../imgs/Company8.jpeg';
-import Company9 from '../imgs/Company9.jpeg';
-import Company10 from '../imgs/Company10.jpeg';
-import Company11 from '../imgs/Company11.jpeg';
-import Company12 from '../imgs/Company12.jpeg';
-import Company13 from '../imgs/Company13.jpeg';
-import Company14 from '../imgs/Company14.jpeg';
-import Company15 from '../imgs/Company15.jpeg';
-import Company16 from '../imgs/Company16.jpeg';
+import Company1 from '../imgs/Company/Company1.jpg';
+import Company2 from '../imgs/Company/Company2.jpeg';
+import Company3 from '../imgs/Company/Company3.jpg';
+import Company4 from '../imgs/Company/Company4.jpg';
+import Company5 from '../imgs/Company/Company5.jpg';
+import Company6 from '../imgs/Company/Company6.jpg';
+import Company7 from '../imgs/Company/Company7.jpg';
+import Company8 from '../imgs/Company/Company8.jpg';
+import Company9 from '../imgs/Company/Company9.jpg';
+import Company10 from '../imgs/Company/Company10.jpg';
+import Company11 from '../imgs/Company/Company11.jpg';
+import Company12 from '../imgs/Company/Company12.jpg';
+import Company13 from '../imgs/Company/Company13.jpg';
+import Company14 from '../imgs/Company/Company14.jpg';
+import Company15 from '../imgs/Company/Company15.jpg';
+import Company16 from '../imgs/Company/Company16.jpg';
+import Company17 from '../imgs/Company/Company17.jpg';
+import Company18 from '../imgs/Company/Company18.jpg';
+import Company19 from '../imgs/Company/Company19.jpg';
+import Company20 from '../imgs/Company/Company20.jpg';
+import Company21 from '../imgs/Company/Company21.jpg';
+import Company22 from '../imgs/Company/Company22.jpg';
+import Company23 from '../imgs/Company/Company23.jpeg';
 
 const CompanyNavPage = () => {
     const images01 = [
@@ -54,7 +61,14 @@ const CompanyNavPage = () => {
         Company13,
         Company14,
         Company15,
-        Company16
+        Company16,
+        Company17,
+        Company18,
+        Company19,
+        Company20,
+        Company21,
+        Company22,
+        Company23
     ];
 
     const pages = [

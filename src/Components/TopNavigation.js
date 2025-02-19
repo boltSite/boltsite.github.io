@@ -328,7 +328,7 @@ const LogoImg = styled.button`
 const ButtonDiv = styled.div`
     display: flex;
     flex-direction: row;
-    width: 25vw;
+    width: 29vw;
     justify-content: space-between;
   
     button {
@@ -336,7 +336,7 @@ const ButtonDiv = styled.div`
       background: none;
   
       span {
-        font-size: 15px;
+        font-size: 17px;
         color: #3f3f3f;
       }
     }

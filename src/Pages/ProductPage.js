@@ -118,7 +118,7 @@ const ImageWrapper = styled.div`
 
 const StyledImage = styled.img`
     width: 100%;
-    height: auto;
+    height: 352px;
     border: 1px solid #ddd;
 `;
 
