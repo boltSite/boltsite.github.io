@@ -365,7 +365,7 @@ const Modal = styled.div`
 
 const ModalItem = styled.button`
     padding: 8px 12px;
-    font-size: 12px;
+    font-size: 13px;
     color: #333;
     cursor: pointer;
     text-align: left;

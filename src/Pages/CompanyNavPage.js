@@ -2,13 +2,13 @@ import React from 'react';
 import { Link, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import CompanyPage from './CompanyPage';
 
-import Introduction1 from '../imgs/Introduction1.jpeg';
-import Introduction2 from '../imgs/Introduction2.jpeg';
-import Introduction3 from '../imgs/Introduction3.jpeg';
-import Introduction4 from '../imgs/Introduction4.jpeg';
-import Introduction5 from '../imgs/Introduction5.jpeg';
-import Introduction6 from '../imgs/Introduction6.jpeg';
-import Introduction7 from '../imgs/Introduction7.jpeg';
+import Introduction1 from '../imgs/Introduction/Introduction1.jpg';
+import Introduction2 from '../imgs/Introduction/Introduction2.jpg';
+import Introduction3 from '../imgs/Introduction/Introduction3.jpg';
+import Introduction4 from '../imgs/Introduction/Introduction4.jpg';
+import Introduction5 from '../imgs/Introduction/Introduction5.jpg';
+import Introduction6 from '../imgs/Introduction/Introduction6.jpg';
+import Introduction7 from '../imgs/Introduction/Introduction7.jpg';
 
 
 import Company1 from '../imgs/Company/Company1.jpg';
