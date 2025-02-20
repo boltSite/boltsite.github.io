@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import MetaTag from '../SEOMetaTag';
 import main1 from '../imgs/main1.jpg';
 import main2 from '../imgs/main2.jpg';
 import main3 from '../imgs/main3.jpg';
@@ -57,6 +58,11 @@ const MainPage = () => {
 
     return (
         <Container>
+            <MetaTag
+                title='동산볼트'
+                description="동산볼트에서는 고객의 다양한 요구를 만족시키기 위해 품질과 신뢰를 바탕으로 다양한 볼트와 너트를 제공합니다. 우리는 고객 만족을 최우선 가치로 삼고, 지속적인 제품 개선과 혁신을 통해 최고의 제품을 공급하고자 합니다."
+                keywords="동산볼트, 볼트 제조, 고품질 볼트, 너트, 볼트 공급, 산업용 하드웨어, 볼트 할인 매장, 볼트 전문 기업, 고객 만족"
+            />
             <ImageContainer $image={images[currentIndex]}>
                 <Overlay>
                     <Title>품질과 신뢰</Title>

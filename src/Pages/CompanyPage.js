@@ -1,14 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
+import MetaTag from '../SEOMetaTag';
 
-const CompanyPage = (props) => {
+const CompanyPage = ({ title, images }) => {
+  const generateDescription = (title) => {
+    if (title === "회사소개서") {
+      return "동산볼트의 회사 역사, 비전, 핵심 가치를 소개합니다.";
+    } else {
+      return "동산볼트의 아름다운 사옥과 주변 환경을 소개합니다.";
+    }
+  };
+
+  const generateKeywords = (title) => {
+    if (title === "회사소개서") {
+      return "동산볼트, 회사 소개, 역사, 비전, 가치";
+    } else {
+      return "동산볼트, 회사 전경, 사옥, 환경";
+    }
+  };
 
   return (
     <Container>
-      <Title>{props.title}</Title>
+      <MetaTag
+        title={title}
+        description={generateDescription(title)}
+        keywords={generateKeywords(title)}
+      />
+      <Title>{title}</Title>
       <Divider />
       <ImageGrid>
-        {props.images.map((image, index) => (
+        {images.map((image, index) => (
           <ImageWrapper key={index}>
             <StyledImage src={image} alt={`Introduction ${index + 1}`} />
           </ImageWrapper>
