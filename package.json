@@ -16,9 +16,7 @@
     "react-helmet-async": "^2.0.5",
     "react-responsive": "^10.0.0",
     "react-router-dom": "^7.1.1",
-    "react-router-sitemap": "^1.2.0",
     "react-scripts": "5.0.1",
-    "react-snap": "^1.23.0",
     "react-transition-group": "^4.4.5",
     "styled-components": "^6.1.14",
     "web-vitals": "^4.2.4"
@@ -30,38 +28,6 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-  },
-  "reactSnap": {
-    "source": "./public",
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox"
-    ],
-    "include": [
-      "/",
-      "/about",
-      "/company/company01",
-      "/company/company02",
-      "/contact",
-      "/products/products01/menu01",
-      "/products/products01/menu02",
-      "/products/products01/menu03",
-      "/products/products02/menu01",
-      "/products/products02/menu02",
-      "/products/products02/menu03",
-      "/products/products02/menu04",
-      "/products/products02/menu05",
-      "/products/products02/menu06",
-      "/products/products02/menu07",
-      "/products/products02/menu08",
-      "/products/products03/menu01",
-      "/products/products03/menu02",
-      "/products/products03/menu03",
-      "/products/products03/menu04",
-      "/products/products04/menu01",
-      "/products/products04/menu02",
-      "/products/products04/menu03"
-    ]
   },
   "eslintConfig": {
     "extends": [
