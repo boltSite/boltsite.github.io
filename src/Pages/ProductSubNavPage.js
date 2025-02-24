@@ -24,8 +24,8 @@ import product0201Image1 from '../imgs/Product02/01/Image1.jpg';
 import product0201Image2 from '../imgs/Product02/01/Image2.jpg';
 import product0201Image3 from '../imgs/Product02/01/Image3.jpg';
 import product0201Image4 from '../imgs/Product02/01/Image4.jpg';
-import product0201Image5 from '../imgs/Product02/01/Image5.png';
-import product0201Image6 from '../imgs/Product02/01/Image6.jpg';
+import product0201Image5 from '../imgs/Product02/01/Image5.jpg';
+import product0201Image6 from '../imgs/Product02/01/Image6.png';
 import product0201Image7 from '../imgs/Product02/01/Image7.jpg';
 import product0201Image8 from '../imgs/Product02/01/Image8.jpg';
 import product0201Image9 from '../imgs/Product02/01/Image9.jpg';
@@ -238,16 +238,16 @@ const ProductSubNavPage = () => {
     };
 
     const images0201 = {
-        "일반육각볼트": product0201Image1,
-        "인치규격 육각볼트-철·고장력·스텐": product0201Image2,
-        "스텐육각볼트-304·316·316L": product0201Image3,
-        "고장력육각볼트(콜라볼트)": product0201Image4,
-        "H/T 볼트 F10T 지오메트": product0201Image5,
-        "T/S 볼트 S10T ": product0201Image6,
-        "용융육각볼트": product0201Image7,
-        "황동(신주)육각볼트": product0201Image8,
-        "티타늄육각볼트": product0201Image9,
-        "절연볼트": product0201Image10
+        "절연볼트": product0201Image1,
+        "일반육각볼트": product0201Image2,
+        "인치규격 육각볼트-철·고장력·스텐": product0201Image3,
+        "스텐육각볼트-304·316·316L": product0201Image4,
+        "고장력육각볼트(콜라볼트)": product0201Image5,
+        "H/T 볼트 F10T 지오메트": product0201Image6,
+        "T/S 볼트 S10T ": product0201Image7,
+        "용융육각볼트": product0201Image8,
+        "황동(신주)육각볼트": product0201Image9,
+        "티타늄육각볼트": product0201Image10,
     };
 
     const images0202 = {
