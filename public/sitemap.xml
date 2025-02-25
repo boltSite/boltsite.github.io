@@ -1,26 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>https://boltsite.github.io/</loc> </url>
-<url> <loc>https://boltsite.github.io/about</loc> </url>
-<url> <loc>https://boltsite.github.io/company/company01</loc> </url>
-<url> <loc>https://boltsite.github.io/company/company02</loc> </url>
-<url> <loc>https://boltsite.github.io/contact</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products01/menu01</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products01/menu02</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products01/menu03</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products02/menu01</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products02/menu02</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products02/menu03</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products02/menu04</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products02/menu05</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products02/menu06</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products02/menu07</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products02/menu08</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products03/menu01</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products03/menu02</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products03/menu03</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products03/menu04</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products04/menu01</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products04/menu02</loc> </url>
-<url> <loc>https://boltsite.github.io/products/products04/menu03</loc> </url>
+    <url>
+        <loc>https://boltsite.github.io/</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0000</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/about</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/company/company01</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/company/company02</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/contact</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products01/menu01</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products01/menu02</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products01/menu03</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products02/menu01</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products02/menu02</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products02/menu03</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products02/menu04</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products02/menu05</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products02/menu06</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products02/menu07</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products02/menu08</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products03/menu01</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products03/menu02</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products03/menu03</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products03/menu04</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products04/menu01</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products04/menu02</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://boltsite.github.io/products/products04/menu03</loc>
+        <lastmod>2025-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
