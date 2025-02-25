@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import MetaTag from '../SEOMetaTag';
 
-const CompanyPage = ({ title, images }) => {
+const CompanyPage = ({ title, images, path }) => {
+  const cliunt_url = process.env.REACT_APP_CLIENT_URL;
+
   const generateDescription = (title) => {
     if (title === "회사소개서") {
       return "동산볼트의 회사 역사, 비전, 핵심 가치를 소개합니다.";
@@ -25,6 +27,7 @@ const CompanyPage = ({ title, images }) => {
         title={title}
         description={generateDescription(title)}
         keywords={generateKeywords(title)}
+        url={`${cliunt_url}${path}`}
       />
       <Title>{title}</Title>
       <Divider />

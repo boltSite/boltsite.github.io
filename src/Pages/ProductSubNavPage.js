@@ -207,7 +207,7 @@ import product0402Image1 from '../imgs/Product04/02/Image1.png';
 import product0403Image1 from '../imgs/Product04/03/Image1.png';
 import product0403Image2 from '../imgs/Product04/03/Image2.jpg';
 
-const ProductSubNavPage = () => {
+const ProductSubNavPage = ({ navPath }) => {
     const location = useLocation();
     const pathSegments = location.pathname.split('/');
 
@@ -493,7 +493,7 @@ const ProductSubNavPage = () => {
                     <Route
                         key={page.path}
                         path={page.path}
-                        element={<ProductPage title={page.title} images={page.images} />}
+                        element={<ProductPage title={page.title} images={page.images} navPath={navPath} path={page.path} />}
                     />
                 ))}
             </Routes>

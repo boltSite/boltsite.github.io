@@ -2,13 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import MetaTag from '../SEOMetaTag';
 
-const ProductPage = ({ title, images }) => {
+const ProductPage = ({ title, images, navPath, path }) => {
     const description = `${title}에 대한 다양한 제품 정보를 제공합니다. 고품질의 제품 이미지와 상세한 설명이 포함되어 있어 제품 선택에 도움을 줍니다.`;
     const keywords = `${title}, 제품, 고품질`;
+    const cliunt_url = process.env.REACT_APP_CLIENT_URL;
+    console.log(`${cliunt_url}${navPath}${path}`);
 
     return (
         <Container>
-            <MetaTag title={title} description={description} keywords={keywords} />
+            <MetaTag title={title} description={description} keywords={keywords} url={`${cliunt_url}${navPath}${path}`} />
             <Title>{title}</Title>
             <Divider />
             <MiddleContainer>

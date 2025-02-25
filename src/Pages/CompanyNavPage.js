@@ -83,7 +83,7 @@ const CompanyNavPage = () => {
                     <Route
                         key={index}
                         path={page.path}
-                        element={<CompanyPage title={page.title} images={page.images} />}
+                        element={<CompanyPage title={page.title} images={page.images} path={page.path}/>}
                     />
                 ))}
             </Routes>

@@ -12,6 +12,8 @@ import ParkingIcon from '../imgs/parkingIcon.png';
 import MetaTag from "../SEOMetaTag";
 
 const AboutPage = () => {
+    const cliunt_url = process.env.REACT_APP_CLIENT_URL;
+
     useEffect(() => {
         const { naver } = window;
         if (naver && naver.maps) {
@@ -63,6 +65,7 @@ const AboutPage = () => {
                 title="오시는 길"
                 description="동산볼트 본사와 영종도점을 방문하기 위한 자세한 오시는 길 정보입니다. 지도와 주소, 교통 정보를 제공하여 방문에 도움을 드립니다."
                 keywords="동산볼트, 볼트 회사, 오시는 길, 김포, 영종도, 본사 주소, 점포 위치, 교통 정보"
+                url={`${cliunt_url}/about`}
             />
             <Title>오시는 길</Title>
             <Divider />

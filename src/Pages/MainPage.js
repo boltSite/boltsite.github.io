@@ -24,6 +24,7 @@ const MainPage = () => {
     const autoSlideRef = useRef(null); // 타이머 관리용 useRef
     const navigate = useNavigate();
     const intervalTime = 3000; // 1초 간격으로 이미지 변경
+    const cliunt_url = process.env.REACT_APP_CLIENT_URL;
 
     const handleIndicatorClick = (index) => {
         setCurrentIndex(index);
@@ -62,6 +63,7 @@ const MainPage = () => {
                 title='동산볼트'
                 description="동산볼트에서는 고객의 다양한 요구를 만족시키기 위해 품질과 신뢰를 바탕으로 다양한 볼트와 너트를 제공합니다. 우리는 고객 만족을 최우선 가치로 삼고, 지속적인 제품 개선과 혁신을 통해 최고의 제품을 공급하고자 합니다."
                 keywords="동산볼트, 볼트 제조, 고품질 볼트, 너트, 볼트 공급, 산업용 하드웨어, 볼트 할인 매장, 볼트 전문 기업, 고객 만족"
+                url={`${cliunt_url}/`}
             />
             <ImageContainer $image={images[currentIndex]}>
                 <Overlay>

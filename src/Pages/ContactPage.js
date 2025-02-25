@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import closeIcon from '../imgs/closeIcon.png';
+import MetaTag from "../SEOMetaTag";
 
 const ContactPage = () => {
     const [showModal, setShowModal] = useState(false);
@@ -14,6 +15,7 @@ const ContactPage = () => {
         files: [],
     });
     const server_url = process.env.REACT_APP_EMAIL_SERVER_URL;
+    const cliunt_url = process.env.REACT_APP_CLIENT_URL;
     const navigate = useNavigate();
 
     const toggleModal = () => {
@@ -60,11 +62,11 @@ const ContactPage = () => {
         alert('문의가 정상적으로 접수되었습니다!');
         navigate("/");
 
-        // axios.post(`${server_url}/send-email`, formDataToSend, {
-        //     headers: { 'Content-Type': 'multipart/form-data' }
-        // }).catch(() => {
-        //     alert('이메일 전송 중 오류가 발생했습니다.');
-        // });
+        axios.post(`${server_url}/send-email`, formDataToSend, {
+            headers: { 'Content-Type': 'multipart/form-data' }
+        }).catch(() => {
+            alert('이메일 전송 중 오류가 발생했습니다.');
+        });
     };
 
     const handleCancel = () => {
@@ -86,6 +88,12 @@ const ContactPage = () => {
     return (
         <FormContainer onSubmit={handleSubmit}>
             <Title>문의하기</Title>
+            <MetaTag 
+                title="문의하기"
+                description="동산볼트에 대한 모든 질문과 문의를 환영합니다. 제품, 서비스, 주문 혹은 기타 궁금한 사항에 대해 문의해 주세요."
+                keywords="동산볼트 문의, 고객 서비스, 제품 문의, 서비스 문의, 주문 문의"
+                url={`${cliunt_url}/contact`}
+            />
             <Divider />
             <MiddleContainer>
                 <Instructions>
