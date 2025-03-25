@@ -199,7 +199,7 @@ const TopNavigation = () => {
                                       subHandleModalChange(subIndex)
                                     } else {
                                       handleNavigate(
-                                        `${item.page}/${item.page}0${subIndex + 1}`
+                                        `${item.page}${item.page}0${subIndex + 1}`
                                       )
                                     }
                                   }}>
@@ -213,7 +213,7 @@ const TopNavigation = () => {
                                     <SubMenuList>
                                       {Object.values(subItem.items).map((menuItem, menuIndex) => (
                                         <SubMenuItem key={menuIndex}>
-                                          <button onClick={() => handleNavigate(`${item.page}/${item.page}0${subIndex + 1}/menu0${menuIndex + 1}`)}>{menuItem}</button>
+                                          <button onClick={() => handleNavigate(`${item.page}${item.page}0${subIndex + 1}/menu0${menuIndex + 1}`)}>{menuItem}</button>
                                         </SubMenuItem>
                                       ))}
                                     </SubMenuList>
