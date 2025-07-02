@@ -85,7 +85,7 @@ const ImageGrid = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-    width: calc(33.3% - 14px);;
+    width: calc(33.3% - 14px);
     display: flex;
     flex-direction: column;
     
@@ -123,7 +123,7 @@ const ImageWrapper = styled.div`
 
 const StyledImage = styled.img`
     width: 100%;
-    height: 352px;
+    aspect-ratio: 8.99 / 9;
     border: 1px solid #ddd;
 `;
 
