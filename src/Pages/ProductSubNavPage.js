@@ -13,7 +13,6 @@ import product0101Image8 from '../imgs/Product01/01/Image8.jpg';
 import product0101Image9 from '../imgs/Product01/01/Image9.jpg';
 import product0101Image10 from '../imgs/Product01/01/Image10.jpg';
 import product0101Image11 from '../imgs/Product01/01/Image11.jpeg';
-import product0101Image12 from '../imgs/Product01/01/Image12.jpeg';
 
 import product0102Image1 from '../imgs/Product01/02/Image1.png';
 
@@ -225,7 +224,6 @@ const ProductSubNavPage = ({ navPath }) => {
         "드라이월 스크류(목재용 나팔머리외날)- 무컷·컷팅": product0101Image9,
         "육각 대와샤 스푼포인트 스크류": product0101Image10,
         "외날피스": product0101Image11,
-        "날개붙이": product0101Image12,
     };
 
     const images0102 = {
@@ -297,7 +295,7 @@ const ProductSubNavPage = ({ navPath }) => {
         "스텐 육각 샘스볼트": product0204Image3,
         "스텐 둥근머리 샘스볼트": product0204Image4,
         "니켈 둥근머리 샘스볼트": product0204Image5,
-        "철 접시머리 십자볼트 (천연색)": product0204Image7,
+        "철 접시머리 십자볼트 (천연색)": product0204Image6,
         "철 접시머리 십자볼트 (착색)": product0204Image7,
         "철 접시머리 십자볼트 (백색)": product0204Image8,
         "스텐 접시머리 십자볼트": product0204Image9,
