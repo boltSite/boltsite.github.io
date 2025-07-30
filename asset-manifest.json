@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.ca67ef22.css",
-    "main.js": "/static/js/main.9af0306e.js",
+    "main.js": "/static/js/main.61abbf54.js",
     "static/js/488.67b26ee4.chunk.js": "/static/js/488.67b26ee4.chunk.js",
     "static/media/Image3.png": "/static/media/Image3.5d7045c9f785e7e54f1d.png",
     "static/media/Company21.jpg": "/static/media/Company21.64be228fa5c3a4caf5b2.jpg",
@@ -73,7 +73,6 @@
     "static/media/Image21.jpg": "/static/media/Image21.2b8ba7ca66a366486bd7.jpg",
     "static/media/Image10.jpg": "/static/media/Image10.188eaa43aed9ccd0b60b.jpg",
     "static/media/Image4.jpg": "/static/media/Image4.990f2fffcc92c9b0ef34.jpg",
-    "static/media/Introduction2.jpg": "/static/media/Introduction2.9dafb25dd3b50c0a3ce7.jpg",
     "static/media/NotoSansKR-Bold.woff": "/static/media/NotoSansKR-Bold.bccfd5fe964d7e12ae44.woff",
     "static/media/main1.jpg": "/static/media/main1.7b6caacc1d9ab552cf0c.jpg",
     "static/media/NotoSansKR-Regular.woff": "/static/media/NotoSansKR-Regular.957d49ad23632e4a9349.woff",
@@ -83,6 +82,7 @@
     "static/media/Image13.jpg": "/static/media/Image13.0a053eb1d19f1b4748d8.jpg",
     "static/media/main2.jpg": "/static/media/main2.6f34763ceb25f3320246.jpg",
     "static/media/Image22.jpg": "/static/media/Image22.1b1d28bc778ea90e86bc.jpg",
+    "static/media/Introduction2.jpg": "/static/media/Introduction2.64e0213b71c85c39a609.jpg",
     "static/media/NotoSansKR-Regular.woff2": "/static/media/NotoSansKR-Regular.e95adf0e9aeddac43f42.woff2",
     "static/media/NotoSansKR-Bold.woff2": "/static/media/NotoSansKR-Bold.a4ecc3f7a43f7d43ce24.woff2",
     "static/media/NotoSansKR-Medium.woff2": "/static/media/NotoSansKR-Medium.e5d0c16f11ebac0c56d2.woff2",
@@ -97,7 +97,6 @@
     "static/media/Image2.jpeg": "/static/media/Image2.04c21d2ceac147baf47d.jpeg",
     "static/media/Image3.jpeg": "/static/media/Image3.8e7b3dacbb3a0e9b01cd.jpeg",
     "static/media/Image7.jpeg": "/static/media/Image7.cdcfe5eafdbb5572761e.jpeg",
-    "static/media/Image12.jpeg": "/static/media/Image12.d3ae444cd795edb62c15.jpeg",
     "static/media/Introduction7.jpg": "/static/media/Introduction7.199edb99842c218fbdbd.jpg",
     "static/media/Image12.png": "/static/media/Image12.45b9c5ac9af313f8d2ff.png",
     "static/media/productIcon.png": "/static/media/productIcon.4b0293c6000bfa94379d.png",
@@ -114,11 +113,11 @@
     "static/media/deliveryIcon.png": "/static/media/deliveryIcon.0459258e13e87e483ddd.png",
     "index.html": "/index.html",
     "main.ca67ef22.css.map": "/static/css/main.ca67ef22.css.map",
-    "main.9af0306e.js.map": "/static/js/main.9af0306e.js.map",
+    "main.61abbf54.js.map": "/static/js/main.61abbf54.js.map",
     "488.67b26ee4.chunk.js.map": "/static/js/488.67b26ee4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ca67ef22.css",
-    "static/js/main.9af0306e.js"
+    "static/js/main.61abbf54.js"
   ]
 }
