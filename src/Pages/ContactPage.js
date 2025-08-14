@@ -58,12 +58,14 @@ const ContactPage = () => {
                 formDataToSend.append('files', file);
             });
         }
-
-        alert('문의가 정상적으로 접수되었습니다!');
+        
+        alert('문의 전송 중입니다.')
         navigate("/");
 
         axios.post(`${server_url}/send-email`, formDataToSend, {
             headers: { 'Content-Type': 'multipart/form-data' }
+        }).then(() => {
+            alert('문의가 정상적으로 접수되었습니다.');
         }).catch(() => {
             alert('이메일 전송 중 오류가 발생했습니다.');
         });
